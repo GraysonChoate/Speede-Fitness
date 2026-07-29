@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <radialGradient id="chargeField" cx="50%" cy="72%" r="58%">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity=".31"/>
+      <stop offset=".24" stop-color="#8FD63F" stop-opacity=".18"/>
+      <stop offset=".58" stop-color="#0E120F" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leftPressure" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8FD63F" stop-opacity=".1"/>
+      <stop offset=".65" stop-color="#B2FF59" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#B2FF59" stop-opacity=".05"/>
+    </linearGradient>
+    <linearGradient id="rightPressure" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#8FD63F" stop-opacity=".1"/>
+      <stop offset=".65" stop-color="#B2FF59" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#B2FF59" stop-opacity=".05"/>
+    </linearGradient>
+    <linearGradient id="activationBand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity="0"/>
+      <stop offset=".45" stop-color="#B2FF59" stop-opacity=".28"/>
+      <stop offset=".55" stop-color="#F4F7F0" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#8FD63F" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="dotsStrong" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.6" fill="#B2FF59" opacity=".48"/>
+    </pattern>
+    <pattern id="dotsFine" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#9AA39A" opacity=".34"/>
+    </pattern>
+    <pattern id="scan" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M0 1H10" stroke="#F4F7F0" stroke-width="1" stroke-opacity=".15"/>
+    </pattern>
+    <filter id="glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="13" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" seed="41"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 .55
+        0 0 0 0 .78
+        0 0 0 0 .36
+        0 0 0 .28 0"/>
+    </filter>
+  </defs>
+
+  <!-- Deep activation field below and around the form. -->
+  <rect x="420" y="510" width="2580" height="870" fill="url(#chargeField)"/>
+  <rect x="510" y="1238" width="2400" height="128" fill="url(#activationBand)"/>
+  <rect x="620" y="1262" width="2180" height="84" fill="url(#scan)" opacity=".72"/>
+  <rect x="600" y="1248" width="2220" height="105" filter="url(#grain)" opacity=".32"/>
+
+  <!-- Upper telemetry canopy: energetic, but it ends before the headline. -->
+  <g opacity=".94">
+    <rect x="350" y="430" width="2720" height="120" fill="url(#dotsFine)"/>
+    <path d="M350 462H1040 M2380 462H3070" stroke="#9AA39A" stroke-opacity=".42" stroke-width="2"/>
+    <path d="M510 500H1270 M2150 500H2910" stroke="#8FD63F" stroke-opacity=".5" stroke-width="3"/>
+    <path d="M760 535H1450 M1970 535H2660" stroke="#B2FF59" stroke-opacity=".62" stroke-width="3"/>
+    <path d="M1120 570H1530 M1890 570H2300" stroke="#F4F7F0" stroke-opacity=".34" stroke-width="2"/>
+    <circle cx="1710" cy="535" r="7" fill="#B2FF59" filter="url(#glow)"/>
+    <path d="M1530 535H1668 M1752 535H1890" stroke="#B2FF59" stroke-opacity=".72" stroke-width="3"/>
+  </g>
+
+  <!-- Left and right pressure banks drive the eye toward the CTA. -->
+  <g>
+    <rect x="38" y="570" width="890" height="650" fill="url(#dotsStrong)" opacity=".76"/>
+    <rect x="2492" y="570" width="890" height="650" fill="url(#dotsStrong)" opacity=".76"/>
+    <path d="M38 620H720L930 680" fill="none" stroke="url(#leftPressure)" stroke-width="12"/>
+    <path d="M38 700H760L960 745" fill="none" stroke="url(#leftPressure)" stroke-width="8"/>
+    <path d="M38 790H800L990 810" fill="none" stroke="url(#leftPressure)" stroke-width="6"/>
+    <path d="M38 900H820L1000 900" fill="none" stroke="url(#leftPressure)" stroke-width="5"/>
+    <path d="M38 1010H800L990 990" fill="none" stroke="url(#leftPressure)" stroke-width="6"/>
+    <path d="M38 1100H760L960 1055" fill="none" stroke="url(#leftPressure)" stroke-width="8"/>
+    <path d="M38 1180H720L930 1120" fill="none" stroke="url(#leftPressure)" stroke-width="12"/>
+
+    <path d="M3382 620H2700L2490 680" fill="none" stroke="url(#rightPressure)" stroke-width="12"/>
+    <path d="M3382 700H2660L2460 745" fill="none" stroke="url(#rightPressure)" stroke-width="8"/>
+    <path d="M3382 790H2620L2430 810" fill="none" stroke="url(#rightPressure)" stroke-width="6"/>
+    <path d="M3382 900H2600L2420 900" fill="none" stroke="url(#rightPressure)" stroke-width="5"/>
+    <path d="M3382 1010H2620L2430 990" fill="none" stroke="url(#rightPressure)" stroke-width="6"/>
+    <path d="M3382 1100H2660L2460 1055" fill="none" stroke="url(#rightPressure)" stroke-width="8"/>
+    <path d="M3382 1180H2700L2490 1120" fill="none" stroke="url(#rightPressure)" stroke-width="12"/>
+  </g>
+
+  <!-- Broken containment brackets around the protected CTA zone. -->
+  <g fill="none" stroke-linecap="square">
+    <path d="M1060 650V600H1380 M2040 600H2360V650" stroke="#B2FF59" stroke-opacity=".72" stroke-width="4"/>
+    <path d="M1060 1260V1310H1380 M2040 1310H2360V1260" stroke="#B2FF59" stroke-opacity=".72" stroke-width="4"/>
+    <path d="M1018 680V558H1320 M2100 558H2402V680" stroke="#8FD63F" stroke-opacity=".42" stroke-width="2.5" stroke-dasharray="7 15"/>
+    <path d="M1018 1240V1342H1320 M2100 1342H2402V1240" stroke="#8FD63F" stroke-opacity=".42" stroke-width="2.5" stroke-dasharray="7 15"/>
+  </g>
+
+  <!-- Bottom convergence and release into the next section. -->
+  <g opacity=".9">
+    <path d="M420 1305H1320L1480 1335H1940L2100 1305H3000" fill="none" stroke="#B2FF59" stroke-opacity=".5" stroke-width="3"/>
+    <path d="M650 1332H1380L1515 1352H1905L2040 1332H2770" fill="none" stroke="#9AA39A" stroke-opacity=".36" stroke-width="2"/>
+    <rect x="860" y="1288" width="1700" height="72" fill="url(#dotsFine)" opacity=".84"/>
+    <circle cx="1480" cy="1335" r="5.5" fill="#B2FF59" filter="url(#glow)"/>
+    <circle cx="1940" cy="1335" r="5.5" fill="#B2FF59" filter="url(#glow)"/>
+  </g>
+
+  <!-- Tight, intentional nodes. -->
+  <g fill="#B2FF59" filter="url(#glow)">
+    <circle cx="1060" cy="600" r="5.5"/>
+    <circle cx="2360" cy="1310" r="5.5"/>
+    <circle cx="930" cy="680" r="4.5"/>
+    <circle cx="2490" cy="1120" r="4.5"/>
+  </g>
+</svg>

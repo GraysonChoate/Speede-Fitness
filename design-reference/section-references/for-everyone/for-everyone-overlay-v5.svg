@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <pattern id="bezelGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.9" fill="#A8C68C" fill-opacity=".88"/>
+      <path d="M0 11H22M11 0V22" stroke="#829477" stroke-opacity=".42" stroke-width="1"/>
+    </pattern>
+    <pattern id="fineGrain" width="38" height="38" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="9" r=".75" fill="#B5BDB1" fill-opacity=".26"/>
+      <circle cx="23" cy="29" r=".65" fill="#899583" fill-opacity=".22"/>
+      <circle cx="34" cy="15" r=".55" fill="#B2FF59" fill-opacity=".28"/>
+    </pattern>
+    <linearGradient id="horizontalFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".08" stop-color="white" stop-opacity="1"/>
+      <stop offset=".92" stop-color="white" stop-opacity="1"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="verticalFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".08" stop-color="white" stop-opacity="1"/>
+      <stop offset=".92" stop-color="white" stop-opacity="1"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="surfaceGlow">
+      <stop offset="0" stop-color="#4A5D3C" stop-opacity=".22"/>
+      <stop offset=".58" stop-color="#263020" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="topBandMask">
+      <rect width="3420" height="1787" fill="black"/>
+      <rect x="420" y="720" width="2580" height="70" fill="url(#horizontalFade)"/>
+    </mask>
+    <mask id="bottomBandMask">
+      <rect width="3420" height="1787" fill="black"/>
+      <rect x="420" y="1510" width="2580" height="155" fill="url(#horizontalFade)"/>
+    </mask>
+    <mask id="leftBandMask">
+      <rect width="3420" height="1787" fill="black"/>
+      <rect x="400" y="690" width="175" height="860" fill="url(#verticalFade)"/>
+    </mask>
+    <mask id="rightBandMask">
+      <rect width="3420" height="1787" fill="black"/>
+      <rect x="2840" y="690" width="175" height="860" fill="url(#verticalFade)"/>
+    </mask>
+    <mask id="grainMask">
+      <rect width="3420" height="1787" fill="white"/>
+      <rect x="0" y="0" width="3420" height="155" fill="black"/>
+      <rect x="540" y="330" width="1290" height="390" rx="26" fill="black"/>
+      <rect x="575" y="785" width="2270" height="730" rx="28" fill="black"/>
+    </mask>
+    <filter id="glow" x="-300%" y="-300%" width="700%" height="700%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- One continuous material atmosphere, not separate decorative clusters. -->
+  <ellipse cx="1710" cy="1120" rx="1510" ry="650" fill="url(#surfaceGlow)"/>
+  <rect x="130" y="180" width="3160" height="1510" fill="url(#fineGrain)"
+        opacity=".44" mask="url(#grainMask)"/>
+
+  <!-- Four sides of one textured bezel around the complete card system. -->
+  <rect x="420" y="720" width="2580" height="70" fill="#314128"
+        opacity=".52" mask="url(#topBandMask)"/>
+  <rect x="420" y="1510" width="2580" height="155" fill="#314128"
+        opacity=".56" mask="url(#bottomBandMask)"/>
+  <rect x="400" y="690" width="175" height="860" fill="#314128"
+        opacity=".48" mask="url(#leftBandMask)"/>
+  <rect x="2840" y="690" width="175" height="860" fill="#314128"
+        opacity=".48" mask="url(#rightBandMask)"/>
+  <rect x="420" y="720" width="2580" height="70" fill="url(#bezelGrid)"
+        opacity="1" mask="url(#topBandMask)"/>
+  <rect x="420" y="1510" width="2580" height="155" fill="url(#bezelGrid)"
+        opacity="1" mask="url(#bottomBandMask)"/>
+  <rect x="400" y="690" width="175" height="860" fill="url(#bezelGrid)"
+        opacity="1" mask="url(#leftBandMask)"/>
+  <rect x="2840" y="690" width="175" height="860" fill="url(#bezelGrid)"
+        opacity="1" mask="url(#rightBandMask)"/>
+
+  <!-- Repeated rails make the bezel read as one continuous fabricated surface. -->
+  <g fill="none" stroke="#819576" stroke-opacity=".52" stroke-width="1.4">
+    <path d="M520 754H2900"/>
+    <path d="M520 770H2900"/>
+    <path d="M520 1548H2900"/>
+    <path d="M520 1594H2900"/>
+    <path d="M448 770V1510"/>
+    <path d="M476 770V1510"/>
+    <path d="M2944 770V1510"/>
+    <path d="M2972 770V1510"/>
+  </g>
+
+  <!-- Unified perimeter traces. -->
+  <g fill="none" stroke-linecap="square">
+    <path d="M578 742H1040 M1225 742H1590 M1780 742H2150 M2340 742H2838"
+          stroke="#8FD63F" stroke-opacity=".68" stroke-width="2"/>
+    <path d="M578 742V900 M578 1360V1530H780"
+          stroke="#8FD63F" stroke-opacity=".70" stroke-width="2"/>
+    <path d="M2838 742V900 M2838 1360V1530H2638"
+          stroke="#8FD63F" stroke-opacity=".70" stroke-width="2"/>
+    <path d="M780 1530H2638" stroke="#8FA581" stroke-opacity=".62" stroke-width="2"/>
+  </g>
+
+  <!-- Four equal bays: every mark is aligned to the card system. -->
+  <g fill="none" stroke="#9EAE93" stroke-opacity=".44" stroke-width="2">
+    <path d="M592 790v-22h22 M1133 768h22v22 M592 1508v22h22 M1133 1530h22v-22"/>
+    <path d="M1150 790v-22h22 M1691 768h22v22 M1150 1508v22h22 M1691 1530h22v-22"/>
+    <path d="M1708 790v-22h22 M2249 768h22v22 M1708 1508v22h22 M2249 1530h22v-22"/>
+    <path d="M2266 790v-22h22 M2807 768h22v22 M2266 1508v22h22 M2807 1530h22v-22"/>
+  </g>
+
+  <!-- One shared baseline and four evenly spaced nodes. -->
+  <path d="M602 1572H2820" fill="none" stroke="#7D8C75" stroke-opacity=".44" stroke-width="2"/>
+  <g fill="#B2FF59" filter="url(#glow)">
+    <circle cx="874" cy="1572" r="4.5"/>
+    <circle cx="1432" cy="1572" r="4.5"/>
+    <circle cx="1990" cy="1572" r="4.5"/>
+    <circle cx="2548" cy="1572" r="4.5"/>
+  </g>
+
+  <!-- Three identical gutter guides. -->
+  <g stroke="#91A785" stroke-opacity=".34" stroke-width="1.5" stroke-dasharray="3 10">
+    <path d="M1152 806V1490"/>
+    <path d="M1710 806V1490"/>
+    <path d="M2268 806V1490"/>
+  </g>
+</svg>

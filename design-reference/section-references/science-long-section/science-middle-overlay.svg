@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <linearGradient id="sideDepthL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#172119" stop-opacity=".68"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sideDepthR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#172119" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.8" fill="#9AA39A" fill-opacity=".24"/>
+      <circle cx="17" cy="17" r="1.4" fill="#8FD63F" fill-opacity=".2"/>
+    </pattern>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity=".95"/>
+      <stop offset=".18" stop-color="#8FD63F" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#8FD63F" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur18" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="145" width="520" height="1600" fill="url(#sideDepthL)"/>
+  <rect x="2900" y="145" width="520" height="1600" fill="url(#sideDepthR)"/>
+  <rect x="40" y="190" width="410" height="1480" fill="url(#dots)" opacity=".75"/>
+  <rect x="2970" y="190" width="400" height="1480" fill="url(#dots)" opacity=".66"/>
+
+  <!-- The spine continues through the narrow gap between the two cards. -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M1682 145V870Q1682 995 1500 1050H540V1720"
+          stroke="#9AA39A" stroke-opacity=".34" stroke-width="2.8"/>
+    <path d="M1695 145V900Q1695 1015 1560 1065H560V1720"
+          stroke="#8FD63F" stroke-opacity=".3" stroke-width="3"/>
+    <path d="M1708 145V930Q1708 1030 1645 1080H580V1720"
+          stroke="#9AA39A" stroke-opacity=".24" stroke-width="2.4" stroke-dasharray="3 15"/>
+
+    <path d="M1738 145V870Q1738 995 1920 1050H2880V1720"
+          stroke="#9AA39A" stroke-opacity=".34" stroke-width="2.8"/>
+    <path d="M1725 145V900Q1725 1015 1860 1065H2860V1720"
+          stroke="#8FD63F" stroke-opacity=".3" stroke-width="3"/>
+    <path d="M1712 145V930Q1712 1030 1775 1080H2840V1720"
+          stroke="#9AA39A" stroke-opacity=".24" stroke-width="2.4" stroke-dasharray="3 15"/>
+  </g>
+
+  <!-- Outer rails hold the card cluster together without entering it. -->
+  <g fill="none" stroke="#9AA39A" stroke-width="2.5">
+    <path d="M520 280V175H650" stroke-opacity=".42"/>
+    <path d="M2765 175h135v105" stroke-opacity=".42"/>
+    <path d="M520 900v105h130" stroke-opacity=".34"/>
+    <path d="M2765 1005h135V900" stroke-opacity=".34"/>
+  </g>
+
+  <circle cx="1710" cy="1018" r="62" fill="url(#glow)" opacity=".82" filter="url(#blur18)"/>
+  <circle cx="1710" cy="1018" r="7" fill="#B2FF59" fill-opacity=".92"/>
+  <circle cx="560" cy="1065" r="5" fill="#8FD63F" fill-opacity=".68"/>
+  <circle cx="2860" cy="1065" r="5" fill="#8FD63F" fill-opacity=".68"/>
+</svg>

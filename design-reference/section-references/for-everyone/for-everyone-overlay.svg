@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <linearGradient id="topFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8FD63F" stop-opacity="0"/>
+      <stop offset=".18" stop-color="#8FD63F" stop-opacity=".38"/>
+      <stop offset=".82" stop-color="#8FD63F" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#8FD63F" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sideFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity="0"/>
+      <stop offset=".28" stop-color="#B2FF59" stop-opacity=".34"/>
+      <stop offset=".72" stop-color="#B2FF59" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#B2FF59" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="wash">
+      <stop offset="0" stop-color="#8FD63F" stop-opacity=".10"/>
+      <stop offset=".55" stop-color="#29401B" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.65" fill="#9DCB72" fill-opacity=".56"/>
+    </pattern>
+    <pattern id="microGrid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M0 0H28M0 0V28" fill="none" stroke="#91A785" stroke-opacity=".48" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="1.8" fill="#B0D28F" fill-opacity=".76"/>
+    </pattern>
+    <pattern id="brokenScan" width="96" height="22" patternUnits="userSpaceOnUse">
+      <path d="M0 11H18M28 11H62M78 11H92" fill="none" stroke="#A8B99C" stroke-opacity=".62" stroke-width="1.6"/>
+      <circle cx="69" cy="11" r="1.9" fill="#B2FF59" fill-opacity=".86"/>
+    </pattern>
+    <pattern id="carbonHatch" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)">
+      <path d="M0 4H24M0 12H24M0 20H24" fill="none" stroke="#879184" stroke-opacity=".34" stroke-width="1"/>
+      <path d="M5 0V24M17 0V24" fill="none" stroke="#4F5B4D" stroke-opacity=".25" stroke-width=".8"/>
+    </pattern>
+    <pattern id="dust" width="42" height="42" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="7" r="1.2" fill="#CBD2C6" fill-opacity=".34"/>
+      <circle cx="27" cy="16" r=".9" fill="#8FA184" fill-opacity=".44"/>
+      <circle cx="14" cy="35" r=".75" fill="#B2FF59" fill-opacity=".38"/>
+      <circle cx="38" cy="31" r=".65" fill="#B8C2B2" fill-opacity=".26"/>
+    </pattern>
+    <linearGradient id="textureFadeRight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".20" stop-color="white" stop-opacity=".94"/>
+      <stop offset=".78" stop-color="white" stop-opacity=".82"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="textureFadeVertical" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".14" stop-color="white" stop-opacity=".88"/>
+      <stop offset=".82" stop-color="white" stop-opacity=".72"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-300%" y="-300%" width="700%" height="700%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="3" seed="29"/>
+      <feColorMatrix values="0 0 0 0 0.35  0 0 0 0 0.48  0 0 0 0 0.29  0 0 0 .20 0"/>
+    </filter>
+    <mask id="dotMask">
+      <rect width="3420" height="1787" fill="black"/>
+      <rect x="260" y="720" width="310" height="760" fill="url(#sideFade)"/>
+      <rect x="2860" y="720" width="310" height="760" fill="url(#sideFade)"/>
+      <rect x="570" y="1538" width="2260" height="160" fill="url(#topFade)"/>
+    </mask>
+    <mask id="rightTextureMask">
+      <rect width="3420" height="1787" fill="black"/>
+      <rect x="1860" y="250" width="1320" height="390" fill="url(#textureFadeRight)"/>
+    </mask>
+    <mask id="lowerTextureMask">
+      <rect width="3420" height="1787" fill="black"/>
+      <rect x="300" y="1518" width="2820" height="220" fill="url(#textureFadeVertical)"/>
+    </mask>
+    <mask id="negativeSpaceMask">
+      <rect width="3420" height="1787" fill="white"/>
+      <rect x="0" y="0" width="3420" height="155" fill="black"/>
+      <rect x="525" y="320" width="1325" height="425" rx="32" fill="black"/>
+      <rect x="555" y="730" width="2310" height="805" rx="34" fill="black"/>
+    </mask>
+    <radialGradient id="graphiteCloud">
+      <stop offset="0" stop-color="#778471" stop-opacity=".26"/>
+      <stop offset=".42" stop-color="#34402F" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Soft exposure, confined to the card system and outer negative space. -->
+  <ellipse cx="1710" cy="1120" rx="1510" ry="690" fill="url(#wash)" opacity="1.7"/>
+  <rect x="180" y="650" width="3060" height="970" opacity=".40" filter="url(#grain)"/>
+
+  <!-- Material bed across all available negative space. Protected zones are cut out. -->
+  <rect x="70" y="175" width="3280" height="1510" fill="url(#carbonHatch)"
+        opacity=".40" mask="url(#negativeSpaceMask)"/>
+  <rect x="70" y="175" width="3280" height="1510" fill="url(#dust)"
+        opacity=".72" mask="url(#negativeSpaceMask)"/>
+  <ellipse cx="2680" cy="560" rx="760" ry="470" fill="url(#graphiteCloud)"/>
+  <ellipse cx="360" cy="1040" rx="410" ry="720" fill="url(#graphiteCloud)" opacity=".80"/>
+  <ellipse cx="1690" cy="1650" rx="1420" ry="220" fill="url(#graphiteCloud)" opacity=".90"/>
+
+  <!-- Visible graphite texture fields: present, but never placed over copy or cards. -->
+  <rect x="1860" y="250" width="1320" height="390" fill="url(#microGrid)"
+        opacity="1" mask="url(#rightTextureMask)"/>
+  <rect x="1940" y="300" width="1200" height="290" fill="url(#brokenScan)"
+        opacity=".96" mask="url(#rightTextureMask)"/>
+  <rect x="300" y="1518" width="2820" height="220" fill="url(#microGrid)"
+        opacity=".82" mask="url(#lowerTextureMask)"/>
+
+  <!-- Pronounced stipple banks in true negative space. -->
+  <path d="M175 300H500V710H175Z" fill="url(#dots)" opacity=".48"/>
+  <path d="M2920 270H3240V740H2920Z" fill="url(#dots)" opacity=".54"/>
+  <path d="M520 1585H2890V1725H520Z" fill="url(#brokenScan)" opacity=".52"/>
+
+  <!-- Fragmented etched bands add depth without reading as copy or data. -->
+  <g fill="none" stroke="#A0AD99" stroke-opacity=".36" stroke-width="1.3">
+    <path d="M120 215H460 M510 215H820 M880 215H1260"/>
+    <path d="M180 245H560 M620 245H980"/>
+    <path d="M145 275H385 M430 275H740"/>
+    <path d="M2060 665H2290 M2350 665H2640 M2715 665H3180"/>
+    <path d="M2120 695H2490 M2560 695H3020"/>
+    <path d="M90 865H390 M95 895H460 M110 925H330"/>
+  </g>
+  <g fill="#B2FF59" opacity=".62">
+    <rect x="508" y="211" width="4" height="8"/><rect x="874" y="211" width="4" height="8"/>
+    <rect x="614" y="241" width="4" height="8"/><rect x="424" y="271" width="4" height="8"/>
+    <rect x="2344" y="661" width="4" height="8"/><rect x="2709" y="661" width="4" height="8"/>
+    <rect x="2554" y="691" width="4" height="8"/><rect x="389" y="861" width="4" height="8"/>
+  </g>
+
+  <!-- Cropped vertical residue at the outer edges creates depth without boxing the section. -->
+  <g stroke="#9AAA8D" stroke-width="1.6" opacity=".72">
+    <path d="M310 510V620 M334 470V668 M358 540V720 M382 495V770 M406 565V820"/>
+    <path d="M3014 500V790 M3038 565V840 M3062 520V760 M3086 590V810 M3110 480V700"/>
+  </g>
+  <g fill="#B2FF59" opacity=".76">
+    <circle cx="310" cy="610" r="2"/><circle cx="334" cy="540" r="2"/><circle cx="358" cy="675" r="2"/>
+    <circle cx="382" cy="570" r="2"/><circle cx="406" cy="730" r="2"/>
+    <circle cx="3014" cy="650" r="2"/><circle cx="3038" cy="730" r="2"/><circle cx="3062" cy="590" r="2"/>
+    <circle cx="3086" cy="690" r="2"/><circle cx="3110" cy="560" r="2"/>
+  </g>
+
+  <!-- Fading measurement residue in the side gutters and below the row. -->
+  <rect width="3420" height="1787" fill="url(#dots)" mask="url(#dotMask)"/>
+
+  <!-- Incomplete group frame. -->
+  <g fill="none" stroke-linecap="square">
+    <path d="M578 742H1040 M1225 742H1590 M1780 742H2150 M2340 742H2838"
+          stroke="#8FD63F" stroke-opacity=".42" stroke-width="2"/>
+    <path d="M578 742V882 M578 1370V1530H760"
+          stroke="#8FD63F" stroke-opacity=".45" stroke-width="2"/>
+    <path d="M2838 742V882 M2838 1370V1530H2655"
+          stroke="#8FD63F" stroke-opacity=".45" stroke-width="2"/>
+    <path d="M760 1530H2660" stroke="url(#topFade)" stroke-width="2"/>
+  </g>
+
+  <!-- Quiet registration brackets outside each card. -->
+  <g fill="none" stroke="#A7C58A" stroke-opacity=".43" stroke-width="2">
+    <path d="M592 790v-22h22 M1133 768h22v22 M592 1508v22h22 M1133 1530h22v-22"/>
+    <path d="M1150 790v-22h22 M1691 768h22v22 M1150 1508v22h22 M1691 1530h22v-22"/>
+    <path d="M1708 790v-22h22 M2249 768h22v22 M1708 1508v22h22 M2249 1530h22v-22"/>
+    <path d="M2266 790v-22h22 M2807 768h22v22 M2266 1508v22h22 M2807 1530h22v-22"/>
+  </g>
+
+  <!-- Shared mounting baseline and four anchors. -->
+  <g>
+    <path d="M602 1572H2820" fill="none" stroke="#75866B" stroke-opacity=".34" stroke-width="2"/>
+    <path d="M602 1572H2820" fill="none" stroke="#9EDC62" stroke-opacity=".18" stroke-width="8"/>
+    <g fill="#B2FF59" filter="url(#glow)">
+      <circle cx="874" cy="1572" r="4.5"/>
+      <circle cx="1432" cy="1572" r="4.5"/>
+      <circle cx="1990" cy="1572" r="4.5"/>
+      <circle cx="2548" cy="1572" r="4.5"/>
+    </g>
+  </g>
+
+  <!-- Faint vertical bay guides, only in the narrow gutters. -->
+  <g stroke="#9DCB72" stroke-opacity=".28" stroke-width="1.5" stroke-dasharray="2 11">
+    <path d="M1152 810V1488"/>
+    <path d="M1710 810V1488"/>
+    <path d="M2268 810V1488"/>
+  </g>
+
+  <!-- A restrained scan field in the empty upper-right area. -->
+  <g fill="none" stroke="#7E9272" stroke-opacity=".20" stroke-width="1.5">
+    <path d="M2020 364H2995"/>
+    <path d="M2070 394H2860"/>
+    <path d="M2160 424H3040"/>
+    <path d="M2250 454H2900"/>
+    <path d="M2340 484H3100"/>
+  </g>
+  <rect x="2060" y="342" width="1040" height="172" fill="url(#dots)" opacity=".14"/>
+</svg>

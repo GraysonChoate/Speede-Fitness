@@ -1,0 +1,49 @@
+# ─── Working files, not deliverables ─────────────────────────────────────────
+# Everything ignored here is either regenerable from the scripts in this repo
+# or a source file whose encoded output already lives in build/assets/.
+
+# Python environment — recreate with the commands in README.md
+.venv/
+
+# Raw generation downloads, rendered frames, and source recordings.
+# The encoded results the site actually serves are in build/assets/.
+gen/
+render/frames/
+render/*.mp4
+*.mov
+
+# Playwright verification screenshots — regenerate with `python shoot.py`
+shots/
+
+# ─── Capture archive: keep the words, drop the weight ────────────────────────
+# The recovered copy is the valuable part and it lives in the .txt files.
+# The rendered HTML, full-page screenshots and third-party Shopify bundles
+# add ~85MB and tell you nothing the text and the brief don't already.
+original/assets/
+original/screenshots/
+original/pages/**/*.html
+original/archive/*.html
+
+# Working image crops used while building — not referenced by the site
+inventory/slices/
+inventory/imgs/
+inventory/ath/
+
+# ─── Design reference: keep the specs and source art, drop the comps ─────────
+# The CLAUDE-INSTRUCTIONS.md files and the overlay SVGs are what the build was
+# made from. The reference PNGs are 5MB comps each (~100MB total).
+design-reference/**/*.png
+design-reference/applied-motion/
+design-reference/visual-references/
+
+# ─── Internal, not for a public repo ─────────────────────────────────────────
+# The huddle transcript is unredacted internal conversation. This GitHub repo
+# is public — it does not belong in it.
+Slack Transcript*/
+
+# macOS noise
+.DS_Store
+**/.DS_Store
+
+# Scratch logs from the capture scripts
+*.log

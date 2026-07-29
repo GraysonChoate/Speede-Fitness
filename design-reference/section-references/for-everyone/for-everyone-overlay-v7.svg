@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <pattern id="ambientGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2.5" cy="2.5" r="2.15" fill="#A4B69A" fill-opacity=".72"/>
+      <path d="M0 11H22M11 0V22" fill="none" stroke="#71806B" stroke-opacity=".28" stroke-width="1"/>
+    </pattern>
+    <pattern id="ambientGrain" width="46" height="46" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="11" r=".75" fill="#D0D6CC" fill-opacity=".24"/>
+      <circle cx="31" cy="19" r=".6" fill="#8CA27E" fill-opacity=".30"/>
+      <circle cx="17" cy="39" r=".55" fill="#B2FF59" fill-opacity=".26"/>
+      <path d="M2 32H12M36 7H44" stroke="#83917C" stroke-opacity=".20" stroke-width=".8"/>
+    </pattern>
+    <pattern id="graphiteWeave" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(-14)">
+      <path d="M0 4H16M0 12H16" fill="none" stroke="#758071" stroke-opacity=".32" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="fieldRight">
+      <stop offset="0" stop-color="#718365" stop-opacity=".30"/>
+      <stop offset=".42" stop-color="#394632" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fieldLeft">
+      <stop offset="0" stop-color="#506047" stop-opacity=".23"/>
+      <stop offset=".55" stop-color="#273023" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="edgeFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".12" stop-color="white" stop-opacity=".76"/>
+      <stop offset=".88" stop-color="white" stop-opacity=".70"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soften" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="54"/>
+    </filter>
+    <filter id="glow" x="-300%" y="-300%" width="700%" height="700%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <mask id="backgroundOnly">
+      <rect width="3420" height="1787" fill="url(#edgeFade)"/>
+      <!-- Soft protected zones: texture fades before copy and cards. -->
+      <rect x="500" y="300" width="1370" height="445" rx="50" fill="black" filter="url(#soften)"/>
+      <rect x="530" y="735" width="2360" height="815" rx="52" fill="black" filter="url(#soften)"/>
+      <rect x="0" y="0" width="3420" height="165" fill="black"/>
+    </mask>
+  </defs>
+
+  <!-- Ambient material fields embedded in the black background. -->
+  <ellipse cx="2700" cy="600" rx="1120" ry="690" fill="url(#fieldRight)"/>
+  <ellipse cx="250" cy="1050" rx="690" ry="850" fill="url(#fieldLeft)"/>
+  <ellipse cx="1780" cy="1650" rx="1570" ry="250" fill="url(#fieldLeft)" opacity=".72"/>
+
+  <!-- One continuous, low-contrast texture surface. -->
+  <rect x="80" y="175" width="3260" height="1510" fill="url(#ambientGrid)"
+        opacity=".72" mask="url(#backgroundOnly)"/>
+  <rect x="80" y="175" width="3260" height="1510" fill="url(#graphiteWeave)"
+        opacity=".44" mask="url(#backgroundOnly)"/>
+  <rect x="80" y="175" width="3260" height="1510" fill="url(#ambientGrain)"
+        opacity=".68" mask="url(#backgroundOnly)"/>
+
+  <!-- Thin frame only. No texture is attached to it. -->
+  <g fill="none" stroke-linecap="square">
+    <path d="M578 742H1040 M1225 742H1590 M1780 742H2150 M2340 742H2838"
+          stroke="#8FD63F" stroke-opacity=".44" stroke-width="2"/>
+    <path d="M578 742V890 M578 1370V1530H760"
+          stroke="#8FD63F" stroke-opacity=".46" stroke-width="2"/>
+    <path d="M2838 742V890 M2838 1370V1530H2660"
+          stroke="#8FD63F" stroke-opacity=".46" stroke-width="2"/>
+    <path d="M760 1530H2660" stroke="#829477" stroke-opacity=".36" stroke-width="2"/>
+  </g>
+
+  <g fill="none" stroke="#94A28D" stroke-opacity=".38" stroke-width="2">
+    <path d="M592 790v-22h22 M1133 768h22v22 M592 1508v22h22 M1133 1530h22v-22"/>
+    <path d="M1150 790v-22h22 M1691 768h22v22 M1150 1508v22h22 M1691 1530h22v-22"/>
+    <path d="M1708 790v-22h22 M2249 768h22v22 M1708 1508v22h22 M2249 1530h22v-22"/>
+    <path d="M2266 790v-22h22 M2807 768h22v22 M2266 1508v22h22 M2807 1530h22v-22"/>
+  </g>
+
+  <path d="M602 1572H2820" fill="none" stroke="#7D8C75" stroke-opacity=".34" stroke-width="2"/>
+  <g fill="#B2FF59" filter="url(#glow)">
+    <circle cx="874" cy="1572" r="4"/>
+    <circle cx="1432" cy="1572" r="4"/>
+    <circle cx="1990" cy="1572" r="4"/>
+    <circle cx="2548" cy="1572" r="4"/>
+  </g>
+</svg>

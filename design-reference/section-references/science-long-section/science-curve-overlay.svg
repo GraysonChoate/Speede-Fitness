@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <linearGradient id="sideL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#172119" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sideR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#172119" stop-opacity=".66"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="hatch" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+      <path d="M0 0V20" stroke="#9AA39A" stroke-opacity=".22" stroke-width="2"/>
+    </pattern>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.8" fill="#9AA39A" fill-opacity=".24"/>
+      <circle cx="17" cy="17" r="1.4" fill="#8FD63F" fill-opacity=".2"/>
+    </pattern>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity=".95"/>
+      <stop offset=".18" stop-color="#8FD63F" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#8FD63F" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur18" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="145" width="560" height="1580" fill="url(#sideL)"/>
+  <rect x="2860" y="145" width="560" height="1580" fill="url(#sideR)"/>
+  <rect x="40" y="190" width="430" height="1480" fill="url(#dots)" opacity=".72"/>
+  <rect x="2950" y="190" width="420" height="1480" fill="url(#dots)" opacity=".62"/>
+
+  <!-- The split signal becomes perimeter rails around the large graph card. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M420 145V250Q420 315 485 315H560V1450Q560 1585 695 1585H2760"
+          stroke="#9AA39A" stroke-opacity=".38" stroke-width="3"/>
+    <path d="M455 145V265Q455 335 520 335H585V1470Q585 1605 720 1605H2790"
+          stroke="#8FD63F" stroke-opacity=".3" stroke-width="2.8"/>
+    <path d="M490 145V280Q490 355 550 355H610V1490Q610 1625 745 1625H2820"
+          stroke="#9AA39A" stroke-opacity=".25" stroke-width="2.5" stroke-dasharray="3 15"/>
+
+    <path d="M3000 145V250Q3000 315 2935 315H2860V1450Q2860 1585 2725 1585H690"
+          stroke="#9AA39A" stroke-opacity=".36" stroke-width="3"/>
+    <path d="M2965 145V265Q2965 335 2900 335H2835V1470Q2835 1605 2700 1605H660"
+          stroke="#8FD63F" stroke-opacity=".28" stroke-width="2.8"/>
+    <path d="M2930 145V280Q2930 355 2870 355H2810V1490Q2810 1625 2675 1625H630"
+          stroke="#9AA39A" stroke-opacity=".24" stroke-width="2.5" stroke-dasharray="3 15"/>
+  </g>
+
+  <!-- Hatching echoes the strength-curve media-board tile in the empty corners. -->
+  <path d="M80 1400H500V1710H80Z" fill="url(#hatch)" opacity=".75"/>
+  <path d="M2920 1400H3340V1710H2920Z" fill="url(#hatch)" opacity=".75"/>
+
+  <circle cx="585" cy="1470" r="56" fill="url(#glow)" opacity=".78" filter="url(#blur18)"/>
+  <circle cx="585" cy="1470" r="6" fill="#B2FF59" fill-opacity=".9"/>
+  <circle cx="2835" cy="1470" r="56" fill="url(#glow)" opacity=".72" filter="url(#blur18)"/>
+  <circle cx="2835" cy="1470" r="6" fill="#B2FF59" fill-opacity=".86"/>
+</svg>

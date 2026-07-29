@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <linearGradient id="blackDepth" x1="0" y1=".2" x2="1" y2=".65">
+      <stop offset="0" stop-color="#172019" stop-opacity=".72"/>
+      <stop offset=".58" stop-color="#101511" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="smokeBand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9AA39A" stop-opacity="0"/>
+      <stop offset=".32" stop-color="#9AA39A" stop-opacity=".15"/>
+      <stop offset=".52" stop-color="#8FD63F" stop-opacity=".12"/>
+      <stop offset=".72" stop-color="#9AA39A" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#9AA39A" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="dotOpacity" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".28" stop-color="white" stop-opacity=".42"/>
+      <stop offset=".72" stop-color="white" stop-opacity="1"/>
+      <stop offset="1" stop-color="white" stop-opacity=".08"/>
+    </linearGradient>
+    <pattern id="dotMatrix" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#9AA39A" fill-opacity=".34"/>
+      <circle cx="15" cy="15" r="1.5" fill="#8FD63F" fill-opacity=".24"/>
+    </pattern>
+    <pattern id="grain" width="44" height="44" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="9" r="1.2" fill="#F4F7F0" fill-opacity=".055"/>
+      <circle cx="21" cy="5" r=".9" fill="#9AA39A" fill-opacity=".05"/>
+      <circle cx="36" cy="19" r="1.1" fill="#8FD63F" fill-opacity=".04"/>
+      <circle cx="12" cy="33" r=".8" fill="#F4F7F0" fill-opacity=".045"/>
+      <circle cx="31" cy="39" r="1" fill="#9AA39A" fill-opacity=".05"/>
+    </pattern>
+    <mask id="dotMask">
+      <rect x="0" y="0" width="610" height="1787" fill="url(#dotOpacity)"/>
+    </mask>
+    <filter id="softBand" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+
+  <!-- Hero tile: rich black, grain, diagonal exposure, calibration rail, dot matrix. -->
+  <rect x="0" y="90" width="650" height="1605" fill="url(#blackDepth)"/>
+  <rect x="0" y="90" width="600" height="1605" fill="url(#grain)" opacity=".95"/>
+
+  <!-- Diagonal smoked exposure, clearly visible but confined to the empty field. -->
+  <path d="M120 110L590 110L590 610L315 420Z"
+        fill="url(#smokeBand)" opacity=".95" filter="url(#softBand)"/>
+  <path d="M190 125L578 125L578 450L300 355Z"
+        fill="url(#smokeBand)" opacity=".5"/>
+
+  <!-- Fading dot matrix from the original media-board hero tile. -->
+  <rect x="300" y="1010" width="285" height="560" fill="url(#dotMatrix)"
+        mask="url(#dotMask)" opacity=".9"/>
+  <rect x="405" y="1125" width="170" height="365" fill="url(#dotMatrix)"
+        mask="url(#dotMask)" opacity=".65"/>
+
+  <!-- Vertical calibration rail and varied ticks; symbols only. -->
+  <g fill="none" stroke="#9AA39A" stroke-width="2">
+    <path d="M92 250V1510" stroke-opacity=".18" stroke-dasharray="2 14"/>
+    <path d="M72 275h42M82 335h32M72 395h42M82 455h32M72 515h42M82 575h32
+             M72 635h42M82 695h32M72 755h42M82 815h32M72 875h42M82 935h32
+             M72 995h42M82 1055h32M72 1115h42M82 1175h32M72 1235h42
+             M82 1295h32M72 1355h42M82 1415h32M72 1475h42"
+          stroke-opacity=".16"/>
+    <path d="M66 215h52m-26-26v52" stroke-opacity=".2"/>
+    <path d="M66 1550h52m-26-26v52" stroke-opacity=".16"/>
+  </g>
+
+  <!-- Sparse registration marks and glints. -->
+  <g fill="none" stroke="#9AA39A" stroke-width="2">
+    <path d="M245 310h38m-19-19v38" stroke-opacity=".13"/>
+    <path d="M510 865h42m-21-21v42" stroke-opacity=".1"/>
+    <path d="M178 1320h32m-16-16v32" stroke-opacity=".09"/>
+  </g>
+  <g fill="#8FD63F">
+    <circle cx="108" cy="584" r="3" fill-opacity=".58"/>
+    <circle cx="472" cy="1208" r="3.5" fill-opacity=".52"/>
+    <circle cx="540" cy="1390" r="2.5" fill-opacity=".42"/>
+    <circle cx="352" cy="1482" r="2.5" fill-opacity=".36"/>
+  </g>
+</svg>

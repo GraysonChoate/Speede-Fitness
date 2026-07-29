@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <linearGradient id="topDepth" x1=".5" y1="0" x2=".5" y2="1">
+      <stop offset="0" stop-color="#172119" stop-opacity=".62"/>
+      <stop offset=".58" stop-color="#101611" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="fadingDots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.8" fill="#9AA39A" fill-opacity=".24"/>
+      <circle cx="17" cy="17" r="1.4" fill="#8FD63F" fill-opacity=".2"/>
+    </pattern>
+    <radialGradient id="nodeGlow">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity=".95"/>
+      <stop offset=".18" stop-color="#8FD63F" stop-opacity=".44"/>
+      <stop offset="1" stop-color="#8FD63F" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur18" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="145" width="3420" height="430" fill="url(#topDepth)"/>
+  <rect x="40" y="190" width="440" height="1300" fill="url(#fadingDots)" opacity=".62"/>
+  <rect x="2990" y="200" width="380" height="1250" fill="url(#fadingDots)" opacity=".48"/>
+
+  <!-- Horizontal intake traces in the empty band above the content. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M320 310H1420Q1640 310 1665 500V1035"
+          stroke="#9AA39A" stroke-opacity=".34" stroke-width="2.7"/>
+    <path d="M210 350H1380Q1590 350 1680 520V1035"
+          stroke="#8FD63F" stroke-opacity=".26" stroke-width="2.5"/>
+    <path d="M450 390H1460Q1640 390 1695 535V1035"
+          stroke="#9AA39A" stroke-opacity=".24" stroke-width="2.4" stroke-dasharray="3 15"/>
+
+    <path d="M3100 310H1990Q1790 310 1735 500V1035"
+          stroke="#9AA39A" stroke-opacity=".32" stroke-width="2.7"/>
+    <path d="M3230 350H2035Q1840 350 1720 520V1035"
+          stroke="#8FD63F" stroke-opacity=".24" stroke-width="2.5"/>
+    <path d="M2960 390H1950Q1780 390 1705 535V1035"
+          stroke="#9AA39A" stroke-opacity=".22" stroke-width="2.4" stroke-dasharray="3 15"/>
+  </g>
+
+  <!-- Central science spine occupies the gutter between copy and graph. -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M1665 520V1230Q1665 1370 1510 1455"
+          stroke="#9AA39A" stroke-opacity=".32" stroke-width="2.8"/>
+    <path d="M1680 520V1260Q1680 1395 1580 1465"
+          stroke="#8FD63F" stroke-opacity=".34" stroke-width="3"/>
+    <path d="M1695 535V1290Q1695 1410 1650 1475"
+          stroke="#9AA39A" stroke-opacity=".26" stroke-width="2.5" stroke-dasharray="2 14"/>
+    <path d="M1705 535V1290Q1705 1410 1760 1475"
+          stroke="#9AA39A" stroke-opacity=".24" stroke-width="2.5" stroke-dasharray="2 14"/>
+    <path d="M1720 520V1260Q1720 1395 1830 1465"
+          stroke="#8FD63F" stroke-opacity=".3" stroke-width="3"/>
+    <path d="M1735 500V1230Q1735 1370 1910 1455"
+          stroke="#9AA39A" stroke-opacity=".3" stroke-width="2.8"/>
+  </g>
+
+  <!-- A few bright nodes make the signal journey readable at full size. -->
+  <circle cx="1700" cy="1035" r="58" fill="url(#nodeGlow)" opacity=".8" filter="url(#blur18)"/>
+  <circle cx="1700" cy="1035" r="7" fill="#B2FF59" fill-opacity=".92"/>
+  <circle cx="1680" cy="690" r="4" fill="#8FD63F" fill-opacity=".7"/>
+  <circle cx="1720" cy="820" r="3.5" fill="#8FD63F" fill-opacity=".58"/>
+
+  <!-- Sparse registration fragments in the outer empty field. -->
+  <g fill="none" stroke="#9AA39A" stroke-opacity=".28" stroke-width="2.2">
+    <path d="M120 300h54m-27-27v54"/>
+    <path d="M3245 330h54m-27-27v54"/>
+    <path d="M175 1340h42m-21-21v42"/>
+    <path d="M3195 1320h42m-21-21v42"/>
+  </g>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <radialGradient id="radialDepth" cx=".28" cy=".5" r=".52">
+      <stop offset="0" stop-color="#172119" stop-opacity=".22"/>
+      <stop offset=".62" stop-color="#101611" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nodeGlow">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity=".9"/>
+      <stop offset=".17" stop-color="#8FD63F" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#8FD63F" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="fineDust" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="5" r="1.2" fill="#9AA39A" fill-opacity=".09"/>
+      <circle cx="21" cy="14" r=".9" fill="#8FD63F" fill-opacity=".065"/>
+      <circle cx="31" cy="30" r="1.1" fill="#F4F7F0" fill-opacity=".055"/>
+      <circle cx="10" cy="28" r=".8" fill="#9AA39A" fill-opacity=".07"/>
+    </pattern>
+    <linearGradient id="dustFade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity=".1"/>
+      <stop offset=".3" stop-color="white" stop-opacity=".65"/>
+      <stop offset=".68" stop-color="white" stop-opacity=".9"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="dustMask">
+      <rect width="1800" height="1787" fill="url(#dustFade)"/>
+    </mask>
+    <filter id="blur18" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- A quiet radial field makes the left half feel dimensional. -->
+  <rect x="0" y="90" width="1840" height="1600" fill="url(#radialDepth)"/>
+  <rect x="80" y="150" width="1650" height="1450" fill="url(#fineDust)"
+        mask="url(#dustMask)" opacity=".72"/>
+
+  <!-- Concentric calibration arcs frame the numeral without crossing it. -->
+  <g fill="none" stroke-linecap="round">
+    <ellipse cx="955" cy="905" rx="760" ry="650"
+             stroke="#9AA39A" stroke-opacity=".2" stroke-width="2.5"
+             stroke-dasharray="210 28 72 20"/>
+    <ellipse cx="955" cy="905" rx="708" ry="604"
+             stroke="#8FD63F" stroke-opacity=".14" stroke-width="2.2"
+             stroke-dasharray="94 22 180 34"/>
+    <ellipse cx="955" cy="905" rx="814" ry="694"
+             stroke="#9AA39A" stroke-opacity=".11" stroke-width="2"
+             stroke-dasharray="3 18"/>
+  </g>
+
+  <!-- Cropped corner brackets echo the original media-board tile. -->
+  <g fill="none" stroke="#9AA39A" stroke-width="2.4">
+    <path d="M248 420V292H382" stroke-opacity=".3"/>
+    <path d="M1528 292h134v128" stroke-opacity=".3"/>
+    <path d="M248 1390v128h134" stroke-opacity=".24"/>
+    <path d="M1528 1518h134v-128" stroke-opacity=".24"/>
+    <path d="M286 400V330h76" stroke-opacity=".13"/>
+    <path d="M1548 330h76v70" stroke-opacity=".13"/>
+  </g>
+
+  <!-- Tangential ticks make the arcs read as instrumentation, not decoration. -->
+  <g stroke="#9AA39A" stroke-width="2" stroke-opacity=".22">
+    <path d="M816 256v38M875 250v27M935 246v46M995 248v27M1056 254v38"/>
+    <path d="M186 762h42M178 823h29M173 885h47M178 947h29M188 1009h40"/>
+    <path d="M1680 760h42M1692 823h29M1681 885h47M1692 947h29M1680 1008h42"/>
+    <path d="M817 1516v38M876 1527v27M936 1508v46M996 1527v27M1057 1516v38"/>
+  </g>
+
+  <!-- Sparse symbolic particles follow the frame perimeter. -->
+  <g fill="#8FD63F">
+    <circle cx="410" cy="430" r="3" fill-opacity=".48"/>
+    <circle cx="525" cy="335" r="2.4" fill-opacity=".36"/>
+    <circle cx="1368" cy="348" r="2.6" fill-opacity=".38"/>
+    <circle cx="1540" cy="510" r="3" fill-opacity=".44"/>
+    <circle cx="1682" cy="1030" r="2.7" fill-opacity=".38"/>
+    <circle cx="1470" cy="1408" r="2.5" fill-opacity=".34"/>
+    <circle cx="488" cy="1440" r="2.8" fill-opacity=".36"/>
+    <circle cx="248" cy="1100" r="2.5" fill-opacity=".3"/>
+  </g>
+
+  <!-- One bright resting glint anchors the lower-right arc. -->
+  <circle cx="1612" cy="1384" r="54" fill="url(#nodeGlow)" opacity=".7" filter="url(#blur18)"/>
+  <circle cx="1612" cy="1384" r="6" fill="#B2FF59" fill-opacity=".84"/>
+</svg>

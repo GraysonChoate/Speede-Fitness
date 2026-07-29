@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <linearGradient id="leftField" x1="0" y1=".15" x2="1" y2=".72">
+      <stop offset="0" stop-color="#172119" stop-opacity=".72"/>
+      <stop offset=".46" stop-color="#101712" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="floorField" x1=".1" y1="1" x2=".8" y2="0">
+      <stop offset="0" stop-color="#152017" stop-opacity=".54"/>
+      <stop offset=".52" stop-color="#0E120F" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="coolReflection" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9AA39A" stop-opacity="0"/>
+      <stop offset=".58" stop-color="#9AA39A" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#8FD63F" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="pinGlow">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity=".82"/>
+      <stop offset=".16" stop-color="#8FD63F" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#8FD63F" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="fineGrain" width="38" height="38" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="8" r="1.2" fill="#F4F7F0" fill-opacity=".05"/>
+      <circle cx="21" cy="3" r=".9" fill="#9AA39A" fill-opacity=".04"/>
+      <circle cx="33" cy="18" r="1.1" fill="#8FD63F" fill-opacity=".035"/>
+      <circle cx="11" cy="29" r=".8" fill="#F4F7F0" fill-opacity=".04"/>
+      <circle cx="29" cy="35" r="1" fill="#9AA39A" fill-opacity=".045"/>
+    </pattern>
+    <pattern id="horizontalGrain" width="120" height="32" patternUnits="userSpaceOnUse">
+      <path d="M0 7H72M18 16h94M0 25h46" stroke="#9AA39A" stroke-opacity=".045" stroke-width="1.5"/>
+      <path d="M84 7h17M2 16h7M60 25h42" stroke="#8FD63F" stroke-opacity=".04" stroke-width="1"/>
+    </pattern>
+    <clipPath id="perimeterOnly">
+      <path d="M0 80H590V1700H0Z M0 1380H1510V1787H0Z"/>
+    </clipPath>
+    <filter id="blur18" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="blur36" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="36"/>
+    </filter>
+  </defs>
+
+  <!-- Rich black tonal depth in the unused perimeter only. -->
+  <rect x="0" y="80" width="700" height="1620" fill="url(#leftField)"/>
+  <path d="M0 1787V1330C470 1350 920 1510 1510 1787Z" fill="url(#floorField)"/>
+  <rect x="0" y="80" width="590" height="1620" fill="url(#fineGrain)" opacity=".95"/>
+  <rect x="0" y="1390" width="1480" height="360" fill="url(#horizontalGrain)" opacity=".95"/>
+
+  <!-- Cropped pressure arcs: symbolic, quiet, and never behind the copy. -->
+  <g clip-path="url(#perimeterOnly)" fill="none" stroke="#9AA39A" stroke-width="2">
+    <ellipse cx="655" cy="880" rx="560" ry="720" stroke-opacity=".075"/>
+    <ellipse cx="655" cy="880" rx="505" ry="650" stroke-opacity=".06"/>
+    <ellipse cx="655" cy="880" rx="450" ry="580" stroke-opacity=".05"/>
+    <ellipse cx="655" cy="880" rx="395" ry="510" stroke-opacity=".04"/>
+  </g>
+
+  <!-- A faint reflected exposure linking the black field to the photography. -->
+  <path d="M70 1180C260 1115 410 1088 580 1102V1198C398 1190 250 1210 70 1280Z"
+        fill="url(#coolReflection)" opacity=".8" filter="url(#blur18)"/>
+
+  <!-- Abstract chevrons and diamonds move the eye downward without language. -->
+  <g fill="none" stroke="#9AA39A" stroke-width="2" stroke-opacity=".12">
+    <path d="M132 430l18 18 18-18"/>
+    <path d="M132 476l18 18 18-18" stroke-opacity=".09"/>
+    <path d="M132 522l18 18 18-18" stroke-opacity=".06"/>
+    <path d="M112 1030l13-13 13 13-13 13Z"/>
+    <path d="M205 1176l9-9 9 9-9 9Z" stroke-opacity=".08"/>
+    <path d="M308 1324l7-7 7 7-7 7Z" stroke-opacity=".06"/>
+  </g>
+
+  <!-- Precision corner fragments suggest framing without boxing in the content. -->
+  <g fill="none" stroke="#9AA39A" stroke-width="2">
+    <path d="M66 250V175H140" stroke-opacity=".13"/>
+    <path d="M66 1510v75h74" stroke-opacity=".1"/>
+    <path d="M388 1605h92v-34" stroke-opacity=".065"/>
+    <path d="M232 330h34m-17-17v34" stroke-opacity=".1"/>
+    <path d="M338 1245h26m-13-13v26" stroke-opacity=".075"/>
+  </g>
+
+  <!-- Sparse constellation of sensor points and two restrained highlights. -->
+  <g fill="#9AA39A">
+    <circle cx="84" cy="350" r="2" fill-opacity=".22"/>
+    <circle cx="188" cy="604" r="1.5" fill-opacity=".17"/>
+    <circle cx="286" cy="792" r="2" fill-opacity=".15"/>
+    <circle cx="106" cy="930" r="1.5" fill-opacity=".18"/>
+    <circle cx="398" cy="1080" r="2" fill-opacity=".12"/>
+    <circle cx="244" cy="1438" r="1.5" fill-opacity=".17"/>
+    <circle cx="536" cy="1588" r="2" fill-opacity=".1"/>
+    <circle cx="820" cy="1690" r="1.5" fill-opacity=".08"/>
+  </g>
+  <circle cx="150" cy="690" r="44" fill="url(#pinGlow)" opacity=".54" filter="url(#blur18)"/>
+  <circle cx="150" cy="690" r="4" fill="#B2FF59" fill-opacity=".62"/>
+  <circle cx="324" cy="1332" r="62" fill="url(#pinGlow)" opacity=".42" filter="url(#blur36)"/>
+  <circle cx="324" cy="1332" r="3.5" fill="#B2FF59" fill-opacity=".48"/>
+</svg>

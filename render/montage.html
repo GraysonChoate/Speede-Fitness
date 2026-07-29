@@ -1,0 +1,275 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @font-face{font-family:'Space Grotesk';src:url('../build/assets/fonts/space-grotesk-var.woff2') format('woff2-variations');font-weight:300 700}
+  @font-face{font-family:'Space Mono';src:url('../build/assets/fonts/space-mono-700.woff2') format('woff2');font-weight:700}
+  @font-face{font-family:'Space Mono';src:url('../build/assets/fonts/space-mono-400.woff2') format('woff2');font-weight:400}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1280px;height:720px;overflow:hidden;background:#080a09}
+  body{font-family:'Space Mono',monospace;color:#f4f7f0}
+  .stage{position:relative;width:1280px;height:720px;
+    background:radial-gradient(120% 90% at 24% -10%,rgba(178,255,89,.075),transparent 62%),#080a09}
+  .grid{position:absolute;inset:0;opacity:.55;
+    background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);
+    background-size:64px 64px}
+  .scan{position:absolute;inset:0;pointer-events:none;opacity:.45;z-index:9;
+    background:repeating-linear-gradient(180deg,rgba(255,255,255,.02) 0 1px,transparent 1px 3px)}
+  .vig{position:absolute;inset:0;pointer-events:none;z-index:8;
+    background:radial-gradient(120% 100% at 50% 50%,transparent 55%,rgba(0,0,0,.55))}
+
+  .panel{position:absolute;inset:0;opacity:0}
+  .kick{position:absolute;top:62px;left:72px;font-size:13px;font-weight:700;letter-spacing:.26em;
+    text-transform:uppercase;color:#b2ff59;display:flex;align-items:center;gap:13px}
+  .kick i{width:8px;height:8px;border-radius:50%;background:#b2ff59;box-shadow:0 0 12px #b2ff59}
+  .kick em{font-style:normal;color:#6f776f;letter-spacing:.2em}
+  .head{position:absolute;top:96px;left:72px;font-family:'Space Grotesk',sans-serif;
+    font-weight:700;font-size:58px;letter-spacing:-.035em;line-height:1.02}
+  .head b{color:#b2ff59}
+  .sub{position:absolute;left:72px;font-size:16px;color:#9aa39a;letter-spacing:.02em;
+    font-family:'Space Grotesk',sans-serif;line-height:1.5}
+
+  .figs{position:absolute;left:72px;bottom:70px;display:flex;align-items:flex-end;gap:60px}
+  .f b{display:block;font-size:74px;font-weight:700;letter-spacing:-.06em;line-height:.9;
+    font-variant-numeric:tabular-nums slashed-zero}
+  .f span{display:block;margin-top:11px;font-size:11.5px;letter-spacing:.2em;color:#9aa39a;
+    text-transform:uppercase}
+  .f.g b{color:#b2ff59}
+  .unit{font-size:21px;color:#9aa39a;margin-left:8px;letter-spacing:0}
+
+  .bar{position:absolute;right:72px;top:190px;bottom:190px;width:10px;border-radius:100px;
+    background:rgba(255,255,255,.07);overflow:hidden}
+  .bar i{position:absolute;left:0;right:0;bottom:0;border-radius:100px;
+    background:linear-gradient(180deg,#b2ff59,#8fd63f);box-shadow:0 0 22px rgba(178,255,89,.6)}
+  .reps{position:absolute;right:72px;top:66px;display:flex;gap:9px}
+  .reps i{width:28px;height:5px;border-radius:100px;background:rgba(255,255,255,.13)}
+  .reps i.on{background:#b2ff59;box-shadow:0 0 10px rgba(178,255,89,.7)}
+
+  /* ch3 — the number */
+  .huge{position:absolute;left:72px;top:150px;font-family:'Space Grotesk',sans-serif;
+    font-weight:700;font-size:250px;line-height:.82;letter-spacing:-.06em;
+    background:linear-gradient(180deg,#fff 10%,#b2ff59 105%);-webkit-background-clip:text;
+    background-clip:text;-webkit-text-fill-color:transparent;
+    font-variant-numeric:tabular-nums}
+  .hugelab{position:absolute;left:78px;top:420px;font-size:15px;letter-spacing:.3em;color:#9aa39a}
+  .board{position:absolute;right:72px;top:210px;width:470px;display:flex;flex-direction:column;gap:14px}
+  .row{position:relative;display:flex;justify-content:space-between;align-items:center;
+    padding:18px 22px;border:1px solid rgba(255,255,255,.09);border-radius:14px;
+    background:#12160f;font-size:16px;overflow:hidden}
+  .row .rb{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,rgba(255,255,255,.06),transparent)}
+  .row.us{border-color:rgba(178,255,89,.45);background:rgba(178,255,89,.07)}
+  .row.us .rb{background:linear-gradient(90deg,rgba(178,255,89,.16),transparent)}
+  .row .w{position:relative;color:#9aa39a}
+  .row.us .w{color:#f4f7f0;font-weight:700}
+  .row .v{position:relative;font-weight:700;letter-spacing:-.02em}
+  .row.us .v{color:#b2ff59}
+
+  /* ch4 — five vs fifteen */
+  .cols{position:absolute;left:72px;right:72px;top:262px;display:flex;gap:80px}
+  .col{flex:1}
+  .col h4{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;
+    letter-spacing:-.01em;margin-bottom:20px;color:#9aa39a}
+  .col.on h4{color:#f4f7f0}
+  .dots{display:flex;flex-wrap:wrap;gap:11px;max-width:460px}
+  .dots i{width:46px;height:46px;border-radius:11px;background:rgba(255,255,255,.08)}
+  .col.on .dots i{background:#b2ff59;box-shadow:0 0 14px rgba(178,255,89,.45)}
+  .col p{margin-top:22px;font-family:'Space Grotesk',sans-serif;font-size:15px;color:#6f776f}
+  .col.on p{color:#b2ff59}
+</style></head>
+<body>
+<div class="stage">
+  <div class="grid"></div>
+
+  <!-- 01 — it reads you -->
+  <div class="panel" id="p1">
+    <div class="kick"><i></i>React Mode <em>· 01</em></div>
+    <div class="head">It reads how hard<br>you push — <b>and matches it.</b></div>
+    <svg width="1000" height="300" viewBox="0 0 1000 300" style="position:absolute;left:72px;top:250px">
+      <defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#b2ff59" stop-opacity=".34"/>
+        <stop offset="100%" stop-color="#b2ff59" stop-opacity="0"/></linearGradient></defs>
+      <g stroke="rgba(255,255,255,.06)"><line x1="0" y1="60" x2="1000" y2="60"/>
+        <line x1="0" y1="130" x2="1000" y2="130"/><line x1="0" y1="200" x2="1000" y2="200"/></g>
+      <path id="fill" fill="url(#fg)"/>
+      <path id="trace" fill="none" stroke="#e9f2df" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+      <g id="head"><line y1="0" y2="300" stroke="rgba(178,255,89,.24)" stroke-width="1.5"/>
+        <circle r="17" fill="#b2ff59" opacity=".16"/><circle r="7" fill="#b2ff59"/></g>
+    </svg>
+    <div class="bar"><i id="barFill" style="height:20%"></i></div>
+    <div class="reps" id="reps"></div>
+    <div class="figs">
+      <div class="f"><b id="load">38.6<span class="unit">lb/cable</span></b><span>Live force</span></div>
+      <div class="f"><b id="rep">1<span class="unit">/6</span></b><span>Reps</span></div>
+    </div>
+  </div>
+
+  <!-- 02 — eccentric overload -->
+  <div class="panel" id="p2">
+    <div class="kick"><i></i>Eccentric overload <em>· 02</em></div>
+    <div class="head">You're stronger<br>lowering. <b>It knows.</b></div>
+    <svg width="1000" height="300" viewBox="0 0 1000 300" style="position:absolute;left:72px;top:238px">
+      <defs><linearGradient id="eg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#b2ff59" stop-opacity=".26"/>
+        <stop offset="100%" stop-color="#b2ff59" stop-opacity="0"/></linearGradient></defs>
+      <g stroke="rgba(255,255,255,.06)"><line x1="0" y1="50" x2="1000" y2="50"/>
+        <line x1="0" y1="130" x2="1000" y2="130"/><line x1="0" y1="210" x2="1000" y2="210"/>
+        <line x1="0" y1="266" x2="1000" y2="266"/></g>
+      <path id="eFill" fill="url(#eg)" opacity="0"/>
+      <path id="cUp" fill="none" stroke="#e9f2df" stroke-width="5" stroke-linecap="round"/>
+      <path id="cDn" fill="none" stroke="#b2ff59" stroke-width="5" stroke-linecap="round"/>
+      <circle id="cDot" r="9" fill="#b2ff59" opacity="0"/>
+      <text id="upLab" x="40" y="288" fill="#9aa39a" font-size="13" letter-spacing="2.4" opacity="0"></text>
+      <text id="dnLab" x="600" y="42" fill="#b2ff59" font-size="13" letter-spacing="2.4" opacity="0">ECCENTRIC · LOWERING</text>
+    </svg>
+    <div class="bar"><i id="barFill2" style="height:20%"></i></div>
+    <div class="figs">
+      <div class="f"><b id="c1">38.6<span class="unit">lb</span></b><span>Lifting</span></div>
+      <div class="f g"><b id="c2">59.0<span class="unit">lb</span></b><span>Lowering</span></div>
+      <div class="f g"><b id="c3">+53<span class="unit">%</span></b><span>Overload</span></div>
+    </div>
+  </div>
+
+  <!-- 03 — the number -->
+  <div class="panel" id="p3">
+    <div class="kick"><i></i>React Mode <em>· 03</em></div>
+    <div class="huge" id="huge">500</div>
+    <div class="hugelab">LBS · MORE THAN ANYTHING YOU'RE COMPARING IT TO</div>
+    <div class="board">
+      <div class="row us"><span class="rb" id="b1"></span><span class="w">SPEEDE — React Mode</span><span class="v">500 lbs</span></div>
+      <div class="row"><span class="rb" id="b2"></span><span class="w">Tonal</span><span class="v">250 lbs</span></div>
+      <div class="row"><span class="rb" id="b3"></span><span class="w">AMP</span><span class="v">100 lbs</span></div>
+    </div>
+  </div>
+
+  <!-- 04 — five, not fifteen -->
+  <div class="panel" id="p4">
+    <div class="kick"><i></i>The whole point <em>· 04</em></div>
+    <div class="head">Five honest reps do what<br><b>fifteen sloppy ones can't.</b></div>
+    <div class="cols">
+      <div class="col on" id="colA"><h4>On Speede</h4><div class="dots" id="dotsA"></div>
+        <p>Every rep at your max.</p></div>
+      <div class="col" id="colB"><h4>A fixed weight</h4><div class="dots" id="dotsB"></div>
+        <p>Most of them barely working.</p></div>
+    </div>
+  </div>
+
+  <div class="vig"></div>
+  <div class="scan"></div>
+</div>
+
+<script>
+const CONC = 38.6, ECC = 59.0;
+
+/* ---------- chapter 1 geometry ---------- */
+const W1 = 1000, TOP1 = 30, BOT1 = 250, N1 = 420;
+const pts = [];
+for (let i = 0; i <= N1; i++) {
+  const t = i / N1, ph = (t * 6) % 1;
+  const lift = Math.sin(ph * Math.PI);
+  const ecc  = ph > 0.5 ? Math.pow((ph - 0.5) * 2, 1.4) : 0;
+  let v = 0.32 + lift * 0.34 + ecc * 0.32 + Math.sin(t * 71) * 0.010;
+  pts.push({ x: t * W1, y: BOT1 - v * (BOT1 - TOP1), v, ecc: ph > 0.5 });
+}
+const dOf = n => pts.slice(0, n + 1).map((p,i)=>(i?'L':'M')+p.x.toFixed(1)+','+p.y.toFixed(1)).join('');
+
+const repsEl = document.getElementById('reps');
+for (let i=0;i<6;i++) repsEl.appendChild(document.createElement('i'));
+const repDots = repsEl.querySelectorAll('i');
+
+/* ---------- chapter 4 dots ---------- */
+const dA = document.getElementById('dotsA'), dB = document.getElementById('dotsB');
+for (let i=0;i<5;i++)  dA.appendChild(document.createElement('i'));
+for (let i=0;i<15;i++) dB.appendChild(document.createElement('i'));
+
+/* ---------- chapter 2 path ---------- */
+const UP = 'M30,250 C170,246 260,178 460,158';
+const DN = 'M460,158 C640,138 760,66 970,44';
+const cUp = document.getElementById('cUp'), cDn = document.getElementById('cDn');
+const LU = 380, LD = 520;   // approx lengths, set precisely on load
+let lenU = 0, lenD = 0;
+requestAnimationFrame(() => {
+  cUp.setAttribute('d', UP); cDn.setAttribute('d', DN);
+  lenU = cUp.getTotalLength(); lenD = cDn.getTotalLength();
+  cUp.style.strokeDasharray = lenU; cDn.style.strokeDasharray = lenD;
+});
+
+const $ = id => document.getElementById(id);
+const clamp01 = x => Math.max(0, Math.min(1, x));
+const ease = x => x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2;
+
+/* chapter windows (fractions of the whole) */
+const CH = [[0,.28],[.28,.53],[.53,.79],[.79,1]];
+/* fades happen INSIDE each window, so neighbouring chapters never overlap —
+   two text-heavy panels dissolving through each other reads as a mistake.
+   At every boundary both sit at zero, giving a clean dip through black. */
+function chapterAlpha(p, [a,b]) {
+  if (p < a || p > b) return 0;
+  const f = (b - a) * 0.11;
+  if (p < a + f) return clamp01((p - a) / f);
+  if (p > b - f) return clamp01((b - p) / f);
+  return 1;
+}
+
+window.frame = function (p) {
+  const A = CH.map(c => chapterAlpha(p, c));
+  ['p1','p2','p3','p4'].forEach((id,i)=> $(id).style.opacity = A[i]);
+
+  /* --- 01 live force --- */
+  if (A[0] > 0) {
+    const lp = clamp01((p - CH[0][0]) / (CH[0][1]-CH[0][0]));
+    const n = Math.max(1, Math.round(lp * N1)), pt = pts[n];
+    $('trace').setAttribute('d', dOf(n));
+    $('fill').setAttribute('d', dOf(n) + `L${pt.x.toFixed(1)},300L0,300Z`);
+    const h = $('head'), hl = h.querySelector('line');
+    hl.setAttribute('x1',pt.x); hl.setAttribute('x2',pt.x);
+    h.querySelectorAll('circle').forEach(c=>{c.setAttribute('cx',pt.x);c.setAttribute('cy',pt.y);});
+    $('barFill').style.height = (14 + pt.v*78).toFixed(1)+'%';
+    const val = Math.max(CONC, Math.min(ECC, CONC + (pt.v-0.32)/0.66*(ECC-CONC)));
+    $('load').innerHTML = val.toFixed(1)+'<span class="unit">lb/cable</span>';
+    const r = Math.min(6, 1+Math.floor(lp*6));
+    $('rep').innerHTML = r+'<span class="unit">/6</span>';
+    repDots.forEach((d,i)=>d.classList.toggle('on', i<r));
+  }
+
+  /* --- 02 overload --- */
+  if (A[1] > 0 && lenU) {
+    const lp = ease(clamp01((p - CH[1][0]) / (CH[1][1]-CH[1][0])));
+    const up = clamp01(lp/0.45), dn = clamp01((lp-0.45)/0.55);
+    cUp.style.strokeDashoffset = lenU*(1-up);
+    cDn.style.strokeDashoffset = lenD*(1-dn);
+    $('upLab').setAttribute('opacity', up>.7?1:0);
+    $('dnLab').setAttribute('opacity', dn>.4?1:0);
+    if (dn>0) { const q=cDn.getPointAtLength(lenD*dn);
+      $('cDot').setAttribute('cx',q.x); $('cDot').setAttribute('cy',q.y); $('cDot').setAttribute('opacity',1);
+      $('eFill').setAttribute('d', 'M460,158 C640,138 760,66 970,44 L970,300 L460,300 Z');
+      $('eFill').setAttribute('opacity', dn); }
+    else { $('cDot').setAttribute('opacity',0); $('eFill').setAttribute('opacity',0); }
+    // the lifting figure is Speede's published 38.6 and never moves off it;
+    // only the lowering figure travels, and only up to their published 59.0
+    $('c1').innerHTML = CONC.toFixed(1)+'<span class="unit">lb</span>';
+    $('c2').innerHTML = (CONC + (ECC-CONC)*dn).toFixed(1)+'<span class="unit">lb</span>';
+    $('c3').innerHTML = '+'+Math.round(53*dn)+'<span class="unit">%</span>';
+    $('barFill2').style.height = (20 + 70*Math.max(up,dn)).toFixed(0)+'%';
+  }
+
+  /* --- 03 the number --- */
+  if (A[2] > 0) {
+    const lp = ease(clamp01((p - CH[2][0]) / (CH[2][1]-CH[2][0])));
+    $('huge').textContent = Math.round(500*Math.min(1,lp*2.6));
+    $('b1').style.width = (100*Math.min(1,lp*1.5))+'%';
+    $('b2').style.width = (50*Math.min(1,Math.max(0,lp-.12)*1.5))+'%';
+    $('b3').style.width = (20*Math.min(1,Math.max(0,lp-.24)*1.5))+'%';
+  }
+
+  /* --- 04 five not fifteen --- */
+  if (A[3] > 0) {
+    const lp = clamp01((p - CH[3][0]) / (CH[3][1]-CH[3][0]));
+    $('colA').classList.toggle('on', true);
+    $('colB').classList.toggle('on', false);
+    dA.querySelectorAll('i').forEach((d,i)=> d.style.opacity = lp*5 > i ? 1 : .12);
+    dB.querySelectorAll('i').forEach((d,i)=> d.style.opacity = lp*15 > i ? 1 : .12);
+  }
+};
+window.frame(0);
+</script>
+</body></html>

@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <linearGradient id="topExposure" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#080A09" stop-opacity="0"/>
+      <stop offset=".18" stop-color="#8FD63F" stop-opacity=".08"/>
+      <stop offset=".48" stop-color="#B2FF59" stop-opacity=".14"/>
+      <stop offset=".76" stop-color="#8FD63F" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sideFadeLeft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity=".34"/>
+      <stop offset=".7" stop-color="#8FD63F" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sideFadeRight" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity=".34"/>
+      <stop offset=".7" stop-color="#8FD63F" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FD63F" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="dotField" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2.1" fill="#B2FF59" opacity=".32"/>
+    </pattern>
+    <pattern id="microDots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.3" fill="#9AA39A" opacity=".25"/>
+    </pattern>
+    <pattern id="scanLines" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0 1H8" stroke="#F4F7F0" stroke-opacity=".13" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="11" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="3" seed="27"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 .56
+        0 0 0 0 .78
+        0 0 0 0 .38
+        0 0 0 .25 0"/>
+    </filter>
+  </defs>
+
+  <!-- Broad exposure and grain in the otherwise empty upper field. -->
+  <rect x="470" y="155" width="2480" height="250" fill="url(#topExposure)"/>
+  <rect x="610" y="165" width="2200" height="190" opacity=".24" filter="url(#grain)"/>
+  <path d="M570 286H1080 M2340 286H2860" stroke="#8FD63F" stroke-opacity=".38" stroke-width="2"/>
+  <path d="M790 316H1290 M2130 316H2630" stroke="#9AA39A" stroke-opacity=".22" stroke-width="1"/>
+
+  <!-- Left scan-stack: deliberately rectangular and staggered, never fluid. -->
+  <g opacity=".95">
+    <rect x="32" y="350" width="360" height="48" fill="url(#sideFadeLeft)"/>
+    <rect x="32" y="414" width="286" height="22" fill="#8FD63F" opacity=".16"/>
+    <rect x="32" y="454" width="430" height="70" fill="url(#sideFadeLeft)" opacity=".82"/>
+    <rect x="32" y="542" width="236" height="34" fill="#B2FF59" opacity=".12"/>
+    <rect x="32" y="594" width="386" height="96" fill="url(#sideFadeLeft)" opacity=".68"/>
+    <rect x="32" y="713" width="300" height="20" fill="#9AA39A" opacity=".15"/>
+    <rect x="32" y="756" width="448" height="58" fill="url(#sideFadeLeft)" opacity=".72"/>
+    <rect x="32" y="838" width="254" height="30" fill="#B2FF59" opacity=".13"/>
+    <rect x="32" y="890" width="372" height="112" fill="url(#sideFadeLeft)" opacity=".66"/>
+    <rect x="32" y="1024" width="426" height="38" fill="#8FD63F" opacity=".11"/>
+    <rect x="32" y="1084" width="316" height="82" fill="url(#sideFadeLeft)" opacity=".78"/>
+    <rect x="32" y="1192" width="402" height="24" fill="#9AA39A" opacity=".15"/>
+    <rect x="32" y="1240" width="244" height="102" fill="url(#sideFadeLeft)" opacity=".6"/>
+    <rect x="32" y="1362" width="380" height="52" fill="url(#sideFadeLeft)" opacity=".72"/>
+    <rect x="32" y="1435" width="274" height="18" fill="#B2FF59" opacity=".16"/>
+    <rect x="66" y="322" width="470" height="1160" fill="url(#microDots)" opacity=".72"/>
+    <path d="M82 325V1480 M112 325V1480 M152 325V1480" stroke="#9AA39A" stroke-opacity=".18"/>
+    <path d="M186 360V1450" stroke="#B2FF59" stroke-opacity=".28" stroke-dasharray="3 22"/>
+  </g>
+
+  <!-- Right stack mirrors the logic without becoming symmetrical wallpaper. -->
+  <g opacity=".95">
+    <rect x="3060" y="370" width="328" height="74" fill="url(#sideFadeRight)"/>
+    <rect x="3134" y="464" width="254" height="24" fill="#B2FF59" opacity=".15"/>
+    <rect x="2988" y="514" width="400" height="42" fill="url(#sideFadeRight)" opacity=".74"/>
+    <rect x="3092" y="582" width="296" height="106" fill="url(#sideFadeRight)" opacity=".65"/>
+    <rect x="3024" y="714" width="364" height="28" fill="#9AA39A" opacity=".14"/>
+    <rect x="2956" y="772" width="432" height="86" fill="url(#sideFadeRight)" opacity=".75"/>
+    <rect x="3120" y="884" width="268" height="42" fill="#8FD63F" opacity=".14"/>
+    <rect x="3008" y="950" width="380" height="98" fill="url(#sideFadeRight)" opacity=".68"/>
+    <rect x="3054" y="1074" width="334" height="22" fill="#B2FF59" opacity=".14"/>
+    <rect x="2940" y="1124" width="448" height="62" fill="url(#sideFadeRight)" opacity=".7"/>
+    <rect x="3110" y="1210" width="278" height="116" fill="url(#sideFadeRight)" opacity=".6"/>
+    <rect x="3016" y="1348" width="372" height="38" fill="#9AA39A" opacity=".16"/>
+    <rect x="2970" y="1414" width="418" height="54" fill="url(#sideFadeRight)" opacity=".72"/>
+    <rect x="2884" y="330" width="470" height="1160" fill="url(#dotField)" opacity=".56"/>
+    <path d="M3338 338V1480 M3308 338V1480 M3268 338V1480" stroke="#9AA39A" stroke-opacity=".18"/>
+    <path d="M3234 372V1450" stroke="#B2FF59" stroke-opacity=".28" stroke-dasharray="3 22"/>
+  </g>
+
+  <!-- Incomplete framing around the complete image row, outside the photography. -->
+  <g fill="none" stroke-linecap="square">
+    <path d="M570 925V875H965 M2450 875H2848V925" stroke="#B2FF59" stroke-opacity=".58" stroke-width="3"/>
+    <path d="M570 1518V1568H965 M2450 1568H2848V1518" stroke="#B2FF59" stroke-opacity=".58" stroke-width="3"/>
+    <path d="M546 944V846H900 M2512 846H2872V944" stroke="#9AA39A" stroke-opacity=".30" stroke-width="2"/>
+    <path d="M546 1498V1596H900 M2512 1596H2872V1498" stroke="#9AA39A" stroke-opacity=".30" stroke-width="2"/>
+    <path d="M520 960V818H828 M2590 818H2898V960" stroke="#8FD63F" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="5 14"/>
+    <path d="M520 1480V1624H828 M2590 1624H2898V1480" stroke="#8FD63F" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="5 14"/>
+  </g>
+
+  <!-- Scan residue tucked below the image row. -->
+  <g opacity=".72">
+    <rect x="670" y="1618" width="2080" height="116" fill="url(#bottomFade)"/>
+    <rect x="710" y="1632" width="2000" height="72" fill="url(#scanLines)" opacity=".65"/>
+    <path d="M700 1640H1260 M2160 1640H2720" stroke="#8FD63F" stroke-opacity=".34" stroke-width="2"/>
+    <path d="M850 1674H1500 M1910 1674H2560" stroke="#9AA39A" stroke-opacity=".24"/>
+    <path d="M1100 1708H2310" stroke="#B2FF59" stroke-opacity=".18" stroke-dasharray="4 18"/>
+  </g>
+
+  <!-- Sparse anchor nodes; enough to imply motion, not a constellation. -->
+  <g fill="#B2FF59" filter="url(#softGlow)">
+    <circle cx="570" cy="875" r="5.5"/>
+    <circle cx="2848" cy="1568" r="5.5"/>
+    <circle cx="186" cy="756" r="4"/>
+    <circle cx="3234" cy="1124" r="4"/>
+    <circle cx="1706" cy="286" r="4.5"/>
+  </g>
+  <g fill="#F4F7F0" opacity=".7">
+    <circle cx="546" cy="1596" r="3.5"/>
+    <circle cx="2872" cy="846" r="3.5"/>
+  </g>
+</svg>

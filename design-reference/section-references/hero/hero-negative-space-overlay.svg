@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <linearGradient id="leftExposure" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#162018" stop-opacity=".55"/>
+      <stop offset=".48" stop-color="#0E120F" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lowerExposure" x1="0" y1="1" x2=".72" y2="0">
+      <stop offset="0" stop-color="#142016" stop-opacity=".34"/>
+      <stop offset=".58" stop-color="#0E120F" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="pulseGlow">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity=".7"/>
+      <stop offset=".22" stop-color="#8FD63F" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#8FD63F" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="microGrid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0H0V52" fill="none" stroke="#9AA39A" stroke-opacity=".045" stroke-width="1"/>
+      <circle cx="0" cy="0" r="1.5" fill="#9AA39A" fill-opacity=".12"/>
+    </pattern>
+    <pattern id="scanResidue" width="28" height="84" patternUnits="userSpaceOnUse">
+      <path d="M2 0V84 M11 18V68 M21 6V78" stroke="#9AA39A" stroke-opacity=".055" stroke-width="2"/>
+      <path d="M0 24H6 M16 48H27 M4 72H13" stroke="#8FD63F" stroke-opacity=".07" stroke-width="2"/>
+    </pattern>
+    <filter id="soften" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- Tonal depth lives only in the unused left perimeter and lower fade. -->
+  <rect x="0" y="90" width="620" height="1590" fill="url(#leftExposure)"/>
+  <path d="M0 1787V1290C390 1340 610 1450 890 1787Z" fill="url(#lowerExposure)"/>
+  <rect x="0" y="140" width="510" height="1480" fill="url(#microGrid)" opacity=".75"/>
+
+  <!-- Ghosted measurement residue: quiet, straight, and outside the copy block. -->
+  <rect x="72" y="260" width="235" height="1220" fill="url(#scanResidue)" opacity=".7"/>
+  <g fill="none" stroke="#9AA39A" stroke-width="2">
+    <path d="M122 290V1518H470" stroke-opacity=".09"/>
+    <path d="M160 350V1478H520" stroke-opacity=".055"/>
+    <path d="M205 410V1436H565" stroke-opacity=".035"/>
+  </g>
+
+  <!-- Registration marks frame the copy without entering it. -->
+  <g fill="none" stroke="#9AA39A" stroke-opacity=".16" stroke-width="2">
+    <path d="M286 418h58m-29-29v58"/>
+    <path d="M286 1300h58m-29-29v58"/>
+    <path d="M92 910h42m-21-21v42"/>
+  </g>
+
+  <!-- A single routed motion path and pulse, intentionally not a bright green outline. -->
+  <path d="M122 530V1120Q122 1260 262 1260H438"
+        fill="none" stroke="#9AA39A" stroke-opacity=".14" stroke-width="2"
+        stroke-dasharray="3 17"/>
+  <circle cx="262" cy="1260" r="42" fill="url(#pulseGlow)" opacity=".8" filter="url(#soften)"/>
+  <circle cx="262" cy="1260" r="5" fill="#B2FF59" fill-opacity=".72"/>
+
+  <!-- Sparse sensor dust; never behind copy or media. -->
+  <g fill="#9AA39A">
+    <circle cx="94" cy="480" r="2" fill-opacity=".18"/>
+    <circle cx="172" cy="705" r="1.5" fill-opacity=".12"/>
+    <circle cx="244" cy="987" r="2" fill-opacity=".14"/>
+    <circle cx="332" cy="1510" r="1.5" fill-opacity=".16"/>
+    <circle cx="528" cy="1628" r="2" fill-opacity=".1"/>
+  </g>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3420" height="1787" viewBox="0 0 3420 1787">
+  <defs>
+    <linearGradient id="perimeterDepth" x1="0" y1="0" x2="1" y2=".7">
+      <stop offset="0" stop-color="#172119" stop-opacity=".7"/>
+      <stop offset=".62" stop-color="#101611" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lowerDepth" x1="0" y1="1" x2=".8" y2="0">
+      <stop offset="0" stop-color="#172219" stop-opacity=".58"/>
+      <stop offset=".58" stop-color="#101611" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#080A09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="dotFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".18" stop-color="white" stop-opacity=".7"/>
+      <stop offset=".65" stop-color="white" stop-opacity="1"/>
+      <stop offset="1" stop-color="white" stop-opacity=".12"/>
+    </linearGradient>
+    <pattern id="squareDots" width="30" height="30" patternUnits="userSpaceOnUse">
+      <rect x="2" y="2" width="2.4" height="2.4" rx=".5" fill="#9AA39A" fill-opacity=".18"/>
+      <rect x="17" y="18" width="1.8" height="1.8" rx=".4" fill="#8FD63F" fill-opacity=".16"/>
+    </pattern>
+    <mask id="fadeMask">
+      <rect x="0" y="0" width="700" height="1700" fill="url(#dotFade)"/>
+    </mask>
+    <radialGradient id="nodeGlow">
+      <stop offset="0" stop-color="#B2FF59" stop-opacity=".95"/>
+      <stop offset=".14" stop-color="#B2FF59" stop-opacity=".5"/>
+      <stop offset=".42" stop-color="#8FD63F" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#8FD63F" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur12" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="blur28" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+
+  <!-- Pronounced but still dark tonal bed. -->
+  <rect x="0" y="90" width="650" height="1620" fill="url(#perimeterDepth)"/>
+  <path d="M0 1787V1370C470 1378 970 1510 1480 1787Z" fill="url(#lowerDepth)"/>
+
+  <!-- Fading dot field, restricted to the empty gutter. -->
+  <rect x="38" y="120" width="545" height="1480" fill="url(#squareDots)"
+        mask="url(#fadeMask)" opacity=".95"/>
+
+  <!-- Dotted telemetry rails behind the solid bundle. -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M102 170V760C102 890 255 936 512 1010V1570"
+          stroke="#9AA39A" stroke-opacity=".2" stroke-width="2.2" stroke-dasharray="2 16"/>
+    <path d="M172 120V700C172 865 292 922 514 1012V1680"
+          stroke="#8FD63F" stroke-opacity=".18" stroke-width="2" stroke-dasharray="2 18"/>
+    <path d="M248 210V810C248 920 350 954 518 1014V1750"
+          stroke="#9AA39A" stroke-opacity=".16" stroke-width="2.2" stroke-dasharray="3 19"/>
+    <path d="M332 145V735C332 890 410 955 520 1015V1725"
+          stroke="#8FD63F" stroke-opacity=".17" stroke-width="2" stroke-dasharray="2 17"/>
+    <path d="M412 255V780C412 910 468 972 522 1016V1650"
+          stroke="#9AA39A" stroke-opacity=".14" stroke-width="2" stroke-dasharray="3 20"/>
+    <path d="M500 180V860C500 940 515 985 524 1018V1540"
+          stroke="#8FD63F" stroke-opacity=".16" stroke-width="2" stroke-dasharray="2 17"/>
+  </g>
+
+  <!-- Routed solid bundle converges, then fans through the lower fade. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M118 500V765C118 900 280 930 518 1012C508 1280 424 1500 86 1652"
+          stroke="#8FD63F" stroke-opacity=".18" stroke-width="2.6"/>
+    <path d="M190 420V790C190 902 322 944 520 1014C514 1300 444 1516 156 1690"
+          stroke="#8FD63F" stroke-opacity=".22" stroke-width="2.8"/>
+    <path d="M264 470V820C264 920 370 958 522 1016C520 1320 466 1530 238 1720"
+          stroke="#9AA39A" stroke-opacity=".17" stroke-width="2.5"/>
+    <path d="M340 390V844C340 930 420 970 523 1017C526 1332 488 1544 326 1742"
+          stroke="#8FD63F" stroke-opacity=".24" stroke-width="3"/>
+    <path d="M412 520V875C412 948 468 984 524 1018C532 1340 516 1554 414 1754"
+          stroke="#9AA39A" stroke-opacity=".18" stroke-width="2.6"/>
+    <path d="M478 470V900C478 958 510 992 525 1019C542 1340 548 1558 510 1762"
+          stroke="#8FD63F" stroke-opacity=".21" stroke-width="2.8"/>
+    <path d="M542 560V925C542 972 532 1002 526 1020C554 1340 580 1555 590 1732"
+          stroke="#9AA39A" stroke-opacity=".14" stroke-width="2.4"/>
+  </g>
+
+  <!-- A single horizontal pickup trace makes the convergence legible. -->
+  <path d="M0 878H205C320 878 414 932 518 1012"
+        fill="none" stroke="#8FD63F" stroke-opacity=".26" stroke-width="2.8"/>
+  <circle cx="205" cy="878" r="6" fill="#F4F7F0" fill-opacity=".8"/>
+  <circle cx="205" cy="878" r="34" fill="url(#nodeGlow)" opacity=".45" filter="url(#blur12)"/>
+
+  <!-- Bright nodes are few, small, and surrounded by fading satellites. -->
+  <circle cx="524" cy="1018" r="58" fill="url(#nodeGlow)" opacity=".82" filter="url(#blur12)"/>
+  <circle cx="524" cy="1018" r="8" fill="#B2FF59" fill-opacity=".9"/>
+  <circle cx="402" cy="1528" r="66" fill="url(#nodeGlow)" opacity=".7" filter="url(#blur28)"/>
+  <circle cx="402" cy="1528" r="7" fill="#B2FF59" fill-opacity=".84"/>
+
+  <!-- Satellite dots build the shimmering fade around the bundle. -->
+  <g fill="#8FD63F">
+    <circle cx="90" cy="620" r="3" fill-opacity=".5"/>
+    <circle cx="138" cy="720" r="2.5" fill-opacity=".46"/>
+    <circle cx="216" cy="810" r="3.5" fill-opacity=".5"/>
+    <circle cx="292" cy="892" r="2.5" fill-opacity=".38"/>
+    <circle cx="356" cy="942" r="3" fill-opacity=".42"/>
+    <circle cx="444" cy="980" r="2.5" fill-opacity=".48"/>
+    <circle cx="492" cy="1058" r="3" fill-opacity=".52"/>
+    <circle cx="548" cy="1118" r="2.5" fill-opacity=".38"/>
+    <circle cx="474" cy="1188" r="3" fill-opacity=".44"/>
+    <circle cx="438" cy="1275" r="2.5" fill-opacity=".36"/>
+    <circle cx="370" cy="1360" r="3.2" fill-opacity=".4"/>
+    <circle cx="326" cy="1450" r="2.5" fill-opacity=".32"/>
+    <circle cx="480" cy="1605" r="2.8" fill-opacity=".34"/>
+    <circle cx="566" cy="1694" r="2.4" fill-opacity=".26"/>
+    <circle cx="212" cy="1658" r="2.5" fill-opacity=".28"/>
+    <circle cx="104" cy="1716" r="3" fill-opacity=".25"/>
+  </g>
+</svg>
