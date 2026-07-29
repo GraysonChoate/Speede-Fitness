@@ -133,6 +133,55 @@ against the page black — invisible in place, and nothing is cropped.
 Video URLs now carry a build hash. Re-rendering under the same filename meant browsers served a
 cached copy, which hid several rounds of changes.
 
+### 4i. Atmospheric treatments, built to the supplied specs
+Each section in `design-reference/section-references/` has its own instruction
+file. All five are built, and each is anchored to measured geometry rather than a
+stretched overlay, so nothing drifts onto copy at other widths.
+
+- **Hero** — the supplied `hero-board-mapped-overlay.svg` used verbatim: angular
+  smoked exposure, broken calibration rail, dot-matrix blocks, registration marks
+  and lime glints. Fitted to the real perimeter, since the art's field is 19% of
+  its width but the copy column starts at 13.6%.
+- **The number** — compression frame: open corner brackets with inset echoes,
+  six pressure bands from the left gutter, shorter bands and load bars in the
+  central 72px gutter, calibration rail, dot field, one lime node.
+- **The science** — one continuous signal in three CSS-anchored pieces. Traces
+  enter from both margins, converge below the readout, run the spine between the
+  two cards, split, and frame the curve card from outside. A glint travels the
+  whole route over 14s.
+- **The machine** — upper exposure haze, staggered edge scan stacks in both
+  gutters, an incomplete bracket frame around the photo row (35px clear top,
+  59px bottom), and lower scan residue.
+- **Built for athletes** — one continuous textured surface feathered away from
+  the headline and cards, an incomplete perimeter, registration corners, gutter
+  guides and a shared baseline with four anchor nodes.
+- **Final CTA** — force event: upper canopy, seven pressure rails per side,
+  broken brackets, activation field, convergence release. Entry sequence plays
+  once and holds; only one faint side pulse repeats. Hover or focus the form and
+  a pulse runs the lower convergence.
+
+Every treatment idles when its section is off screen and renders a composed
+static state under `prefers-reduced-motion`.
+
+### 4j. Hover-activated motion
+Both the athlete portraits and the four persona cards play only on hover or
+keyboard focus. Sources aren't fetched until first hover, the clip fades in only
+once it can play, and it resets on mouse-out — the photograph is always the
+resting state.
+
+The persona clips run **full length, forward only**: each contains a complete rep
+that returns to its start, so it loops on its own. An earlier ping-pong version
+reversed the action and read as a rewind.
+
+### 4k. Proof strip leads with the marks
+The strip under the hero now opens with **Pro Level Training. Built Around You.**
+beside the four league marks, then the eight-athlete roster. The proof section
+headline changed to the same line.
+
+⚠️ The league marks are supplied by the client and are protected trademarks —
+the Olympic symbol under 36 U.S.C. 220506. Speede's own site uses text instead.
+They should confirm permission before this goes anywhere public.
+
 ### 5. Vertical rhythm
 **Was:** `padding: 90px 0` on every section.
 **Now:** a five-step scale, `--sp-xs` through `--sp-xl`. The hero and the final CTA own the most
