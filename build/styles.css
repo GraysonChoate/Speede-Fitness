@@ -2041,7 +2041,7 @@ body::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(4, 8, 6, 0.42);
+  background: rgba(4, 8, 6, 0.58);
   pointer-events: none;
 }
 
