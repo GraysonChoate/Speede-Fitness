@@ -13,7 +13,7 @@
 <link rel="preload" href="assets/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/space-mono-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=c44fd77f">
+<link rel="stylesheet" href="styles.css?v=c6a3e476">
 </head>
 <body>
 
@@ -50,6 +50,18 @@
 <!-- ====================== HERO ====================== -->
 <section class="hero">
   <div class="hero-field" aria-hidden="true"></div>
+  <figure class="hero-media">
+      <!-- Generated from Speede's own photography — the camera moves, the
+           hardware doesn't. Falls back to the poster frame when motion is
+           reduced or video can't play. -->
+      <video class="hero-vid" data-hero-video autoplay muted loop playsinline
+             preload="metadata" poster="assets/video/hero-poster.jpg?v=164cef51"
+             aria-label="The Speede machine in a sunlit room, then folded flat and slid under a bed.">
+        <source src="assets/video/hero.webm?v=164cef51" type="video/webm">
+        <source src="assets/video/hero.mp4?v=164cef51" type="video/mp4">
+        <img src="assets/img/2-1024.jpg" width="1500" height="1492" alt="A man training on the Speede machine in a sunlit room, the screen showing his live force readout.">
+      </video>
+    </figure>
 
   <!-- Hero media-board treatment. This is the supplied source art from
        design-reference/section-references/hero/hero-board-mapped-overlay.svg,
@@ -166,18 +178,6 @@
       </p>
     </div>
 
-    <figure class="hero-media">
-      <!-- Generated from Speede's own photography — the camera moves, the
-           hardware doesn't. Falls back to the poster frame when motion is
-           reduced or video can't play. -->
-      <video class="hero-vid" data-hero-video autoplay muted loop playsinline
-             preload="metadata" poster="assets/video/hero-poster.jpg?v=164cef51"
-             aria-label="The Speede machine in a sunlit room, then folded flat and slid under a bed.">
-        <source src="assets/video/hero.webm?v=164cef51" type="video/webm">
-        <source src="assets/video/hero.mp4?v=164cef51" type="video/mp4">
-        <img src="assets/img/2-1024.jpg" width="1500" height="1492" alt="A man training on the Speede machine in a sunlit room, the screen showing his live force readout.">
-      </video>
-    </figure>
 
   </div>
 

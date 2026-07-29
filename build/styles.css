@@ -281,7 +281,19 @@ p, li, blockquote { text-wrap: pretty; }
   font-size: clamp(22px, 2.9vw, 34px); letter-spacing: -.02em;
   color: var(--muted); margin-top: 14px; line-height: 1.12;
 }
-.hero-lede { margin: 26px 0 32px; max-width: 50ch; color: #e6ebe0; }
+.hero-lede { margin: 26px 0 32px; max-width: 50ch; color: #ffffff; }
+
+}
+.hero-copy h1,
+.hero-copy .hero-tease,
+.hero-copy .hero-lede,
+.hero-copy .eyebrow,
+.hero-copy .form-note { color: #ffffff; }
+.hero-copy .hero-lede b,
+.hero-copy .hero-lede strong { color: #ffffff; }
+.hero-copy .eyebrow { color: #d8ded4; }
+.hero-copy .form-note { color: #cdd4c9; }
+.hero-copy h1 .green { color: var(--green); }
 
 .form { display: flex; gap: 10px; max-width: 500px; flex-wrap: wrap; }
 .form input {
@@ -322,25 +334,9 @@ p, li, blockquote { text-wrap: pretty; }
   object-fit: cover;
   object-position: center;
   filter: contrast(1.04) saturate(.92);
-  opacity: .52;
+  opacity: 1;
 }
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    radial-gradient(58% 70% at 76% 38%, rgba(178,255,89,.10), transparent 60%),
-    /* Copy sits on the video now, so the scrim holds the left readable and
-       releases toward the right, then grounds top and bottom. */
-    linear-gradient(to right,
-      rgba(8,10,9,.97) 0%, rgba(8,10,9,.94) 34%,
-      rgba(8,10,9,.74) 56%, rgba(8,10,9,.5) 78%, rgba(8,10,9,.54) 100%),
-    linear-gradient(to bottom,
-      rgba(8,10,9,.68) 0%, rgba(8,10,9,.22) 24%,
-      rgba(8,10,9,.42) 70%, #080a09 100%);
-  pointer-events: none;
-}
+.hero::after { content: none; }
 .hero-tag {
   position: absolute; right: 4vw; bottom: 8%; z-index: 3;
   background: rgba(8,10,9,.8); backdrop-filter: blur(10px);
@@ -1934,3 +1930,69 @@ body::after {
   .proofstrip-marks img[alt="Olympic"] { height: 23px }
 }
 }
+
+
+/* ==========================================================================
+   HERO TEXT LAYER — solid, never transparent
+   The video and its overlay live entirely below this. Nothing in the text
+   layer carries alpha, blend, filter or animated opacity.
+   ========================================================================== */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+/* an even, gentle darken across the whole video — no directional gradient,
+   so the footage still reads edge to edge */
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 8, 6, 0.42);
+  pointer-events: none;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+  mix-blend-mode: normal;
+  filter: none;
+}
+
+.hero .eyebrow,
+.hero h1,
+.hero .hero-tease,
+.hero .hero-lede,
+.hero .form-note,
+.hero .form label,
+.hero .form input,
+.hero .form button {
+  opacity: 1 !important;
+  mix-blend-mode: normal;
+  filter: none;
+  text-shadow: none;
+}
+
+/* entrance animation moves only — never fades */
+.hero .reveal,
+.hero .reveal.in {
+  opacity: 1 !important;
+}
+.hero .reveal { transform: translateY(22px); }
+.hero .reveal.in {
+  transform: none;
+  transition: transform .75s var(--ease);
+  transition-delay: var(--d, 0ms);
+}
+
+.hero h1 { color: #f4f7f0; }
+.hero h1 .green { color: #b2ff59; }
+
+.hero .hero-tease,
+.hero .hero-lede,
+.hero .form-note { color: #c3c8c1; }
+.hero .hero-lede b,
+.hero .hero-lede strong { color: #f4f7f0; }
+.hero .eyebrow { color: #c3c8c1; }
+.hero .form-note .check { color: #b2ff59; }
