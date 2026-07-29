@@ -284,9 +284,18 @@ the concrete was bright enough to flatten the headline. The band-shaped crop and
 a much heavier grade fixed both. Below 940px there is no "opposite the numeral"
 left to aim at, so the side fade becomes a vertical wash.
 
-**The science — `grip`.** The B&W hand-on-bar macro is anchored to a `.mods-bed`
-wrapper around the two live cards, so it is positioned off their real geometry
-rather than a guessed offset. It bleeds past all four edges and the cards —
-which are opaque — crop it back to slivers: the bar enters from the left margin
-and disappears behind the first card. The deco, HUD, tally and curve diagram are
-all untouched.
+**The science — `mosaic`.** Three passes here, and the first two were the same
+mistake twice. The cards span x 205–1305 of a 1512-wide section, so a background
+image only ever shows through ~200px slivers at the margins — and a sliver of an
+extreme close-up (the hand-on-bar macro) is just a smudge. Swapping in a more
+legible photograph didn't fix it either; the figure was still 80% behind a card.
+The constraint was never *which* photo, it was *how much room* it had.
+
+What shipped is a mosaic of eight stills from Speede's own "WORK FOR IT." film,
+composited into one dark field behind the whole section (`prep-mosaic.py`).
+Because it covers the full section, the frames are big enough to read. Two
+things shaped the composition: the film has **"WORK FOR IT." burned in at ~54%
+of every frame's height**, so only the top half of any frame is usable; and the
+faces were deliberately placed in the outer columns, with quiet texture — brick,
+cable, equipment — in the middle where the cards hide it anyway. The deco, HUD,
+tally and curve diagram are all untouched.

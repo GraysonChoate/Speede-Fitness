@@ -1528,24 +1528,29 @@ body::after {
    dark in the file, so nothing here dims it a second time — the only job of
    this rule is placement and where it stops.
 
-   Horizontally it is masked to nothing across the left half, so the numeral
-   never sits on the picture; the athlete reads in the right half where the
-   comparison rows are opaque enough to crop into him. Vertically it fades at
-   both band edges so it never collides with the seams. */
+   It is a tall panel down the right of the band rather than a full-bleed
+   backdrop. The frame is roughly square and the band is 1.8:1, so stretching
+   it across the whole section meant either blowing the athlete up until he
+   read as wall, or cropping off the hand and cable at the top — which are the
+   point of the shot. A panel keeps the composition nearly intact.
+
+   It fades out on its left edge before the numeral, and at the top and bottom
+   so it never meets the band seams. */
 .num-photo {
-  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  position: absolute; z-index: 0; pointer-events: none;
+  top: 0; bottom: 0; right: 0; left: 38%;
   -webkit-mask-image:
-    linear-gradient(90deg, transparent 30%, #000 62%, #000 100%),
-    linear-gradient(180deg, transparent 0%, #000 16%, #000 82%, transparent 100%);
+    linear-gradient(90deg, transparent 0%, #000 26%, #000 100%),
+    linear-gradient(180deg, transparent 0%, #000 4%, #000 90%, transparent 100%);
           mask-image:
-    linear-gradient(90deg, transparent 30%, #000 62%, #000 100%),
-    linear-gradient(180deg, transparent 0%, #000 16%, #000 82%, transparent 100%);
+    linear-gradient(90deg, transparent 0%, #000 26%, #000 100%),
+    linear-gradient(180deg, transparent 0%, #000 4%, #000 90%, transparent 100%);
   -webkit-mask-composite: source-in;
           mask-composite: intersect;
 }
 .num-photo img {
   width: 100%; height: 100%;
-  object-fit: cover; object-position: 70% 60%;
+  object-fit: cover; object-position: 50% 6%;
   display: block;
 }
 /* Below the two-column collapse there is no "opposite the numeral" left to aim
@@ -1553,12 +1558,13 @@ body::after {
    becomes a wash instead: clear under the numeral, settling behind the rows. */
 @media (max-width: 940px) {
   .num-photo {
+    left: 0;
     -webkit-mask-image: linear-gradient(180deg, transparent 10%, #000 48%, #000 84%, transparent 100%);
             mask-image: linear-gradient(180deg, transparent 10%, #000 48%, #000 84%, transparent 100%);
     -webkit-mask-composite: source-over;
             mask-composite: add;
   }
-  .num-photo img { object-position: 62% 58%; }
+  .num-photo img { object-position: 58% 28%; }
 }
 
 .num-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
@@ -1669,31 +1675,24 @@ body::after {
 #science { position: relative; overflow: hidden; }
 #science .wrap { position: relative; z-index: 2; }
 
-/* The grip macro, woven behind the two live cards.
+/* The film mosaic behind the whole section.
 
-   It is sized off the cards themselves and pushed out past all four edges, so
-   what survives is the margin either side, the seam between them and a band
-   above and below — impressions of the picture around the content rather than
-   a backdrop it sits on. The cards are opaque and do the cropping; the mask
-   only stops the bleed from hitting the section seams. */
-.mods-bed { position: relative; }
-.mods-bed > .mods { position: relative; z-index: 1; }
-.mods-photo {
-  position: absolute; z-index: 0; pointer-events: none;
-  top: -12%; bottom: -12%;
-  left: calc(50% - 50vw); right: calc(50% - 50vw);
-  -webkit-mask-image:
-    linear-gradient(180deg, transparent 0%, #000 26%, #000 74%, transparent 100%),
-    linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%);
-          mask-image:
-    linear-gradient(180deg, transparent 0%, #000 26%, #000 74%, transparent 100%),
-    linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%);
-  -webkit-mask-composite: source-in;
-          mask-composite: intersect;
+   Two earlier passes tried to tuck a single photograph into the gaps around
+   the cards. Both failed for the same reason: the cards span x 205–1305 of a
+   1512-wide section, so a background image only ever shows through ~200px
+   slivers, and a sliver of an extreme close-up is a smudge. Covering the full
+   section instead means the frames are large enough to read, and the parts the
+   cards hide were composited as texture rather than subject on purpose.
+
+   It is graded dark in the file. Only the band edges are handled here. */
+.sci-photo {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
 }
-.mods-photo img {
+.sci-photo img {
   width: 100%; height: 100%;
-  object-fit: cover; object-position: 50% 34%;
+  object-fit: cover; object-position: 50% 50%;
   display: block;
 }
 .sci-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; }

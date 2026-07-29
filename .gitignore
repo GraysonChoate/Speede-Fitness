@@ -51,3 +51,6 @@ source-media/*.mov
 
 # Scratch logs from the capture scripts
 *.log
+
+# ffmpeg scratch for prep-mosaic.py — regenerate by deleting this and re-running
+.frames/

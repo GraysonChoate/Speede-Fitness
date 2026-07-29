@@ -13,7 +13,7 @@
 <link rel="preload" href="assets/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/space-mono-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=32f13184">
+<link rel="stylesheet" href="styles.css?v=ca1c19bb">
 </head>
 <body>
 
@@ -204,20 +204,20 @@
 
 <!-- ====================== THE NUMBER ====================== -->
 <section class="sec sec--band" id="number">
-  <!-- The effort behind the number. Weighted to the right so the athlete sits
-       opposite the numeral, and masked away before it reaches the 500. -->
+  <!-- The effort behind the number: a tall panel on the right, so the athlete
+       sits opposite the numeral and the hand, handle and cable all survive. -->
   <div class="num-photo" aria-hidden="true">
     <picture>
       <source type="image/webp"
-              srcset="assets/img/layer/effort-760.webp 760w,
-                      assets/img/layer/effort-1100.webp 1100w,
-                      assets/img/layer/effort-1600.webp 1600w"
-              sizes="100vw">
-      <img src="assets/img/layer/effort-1100.jpg" alt="" loading="lazy" decoding="async"
-           srcset="assets/img/layer/effort-760.jpg 760w,
-                   assets/img/layer/effort-1100.jpg 1100w,
-                   assets/img/layer/effort-1600.jpg 1600w"
-           sizes="100vw">
+              srcset="assets/img/layer/effort-620.webp 620w,
+                      assets/img/layer/effort-900.webp 900w,
+                      assets/img/layer/effort-1200.webp 1200w"
+              sizes="(max-width: 940px) 100vw, 60vw">
+      <img src="assets/img/layer/effort-900.jpg" alt="" loading="lazy" decoding="async"
+           srcset="assets/img/layer/effort-620.jpg 620w,
+                   assets/img/layer/effort-900.jpg 900w,
+                   assets/img/layer/effort-1200.jpg 1200w"
+           sizes="(max-width: 940px) 100vw, 60vw">
     </picture>
   </div>
 
@@ -325,6 +325,24 @@
 <div class="seam" data-seam aria-hidden="true"></div>
 <!-- ====================== THE SCIENCE ====================== -->
 <section class="sec" id="science">
+  <!-- Stills from Speede's own "WORK FOR IT." film, composited into one dark
+       field behind the whole section. The cards float on top of it; what the
+       eye catches is the margins and the gaps between them. -->
+  <div class="sci-photo" aria-hidden="true">
+    <picture>
+      <source type="image/webp"
+              srcset="assets/img/layer/mosaic-600.webp 600w,
+                      assets/img/layer/mosaic-900.webp 900w,
+                      assets/img/layer/mosaic-1240.webp 1240w"
+              sizes="100vw">
+      <img src="assets/img/layer/mosaic-900.jpg" alt="" loading="lazy" decoding="async"
+           srcset="assets/img/layer/mosaic-600.jpg 600w,
+                   assets/img/layer/mosaic-900.jpg 900w,
+                   assets/img/layer/mosaic-1240.jpg 1240w"
+           sizes="100vw">
+    </picture>
+  </div>
+
   <!-- One continuous signal routed through the section's own gutters: it enters
        from both margins, converges below the readout, runs the spine between the
        two cards, splits, and frames the curve card from outside. -->
@@ -470,28 +488,7 @@
     </div>
 
     <!-- The two remaining chapters from the film, rebuilt live. Vector-sharp
-         at any size, and every figure is Speede's own.
-
-         The bed exists so the photograph can be anchored to the cards' own
-         geometry rather than a guessed offset: it bleeds out past all four
-         edges, and the cards — which are opaque — crop it back down to
-         slivers. You get the impression of the image around them. -->
-    <div class="mods-bed">
-      <div class="mods-photo" aria-hidden="true">
-        <picture>
-          <source type="image/webp"
-                  srcset="assets/img/layer/grip-760.webp 760w,
-                          assets/img/layer/grip-1100.webp 1100w,
-                          assets/img/layer/grip-1600.webp 1600w"
-                  sizes="100vw">
-          <img src="assets/img/layer/grip-1100.jpg" alt="" loading="lazy" decoding="async"
-               srcset="assets/img/layer/grip-760.jpg 760w,
-                       assets/img/layer/grip-1100.jpg 1100w,
-                       assets/img/layer/grip-1600.jpg 1600w"
-               sizes="100vw">
-        </picture>
-      </div>
-
+         at any size, and every figure is Speede's own. -->
     <div class="mods">
 
       <!-- eccentric overload -->
@@ -539,7 +536,6 @@
       </div>
 
     </div>
-    </div><!-- /.mods-bed -->
 
     <!-- the sticking-point diagram — the "why" nobody has drawn -->
     <div class="curve-card reveal">
