@@ -361,24 +361,40 @@ p, li, blockquote { text-wrap: pretty; }
   text-transform: uppercase; color: var(--muted); max-width: 15ch; line-height: 1.5;
 }
 .proofstrip-label b { color: var(--ink); display: block; }
+/* ---------- endless roster carousel -------------------------------------
+   The eight chips duplicated once and translated -50%, so the loop point is
+   invisible. Edges masked so it reads as continuous rather than a strip. */
+.roster-rail {
+  width: 100%; overflow: hidden; margin-top: 4px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.roster-track {
+  display: flex; align-items: center; gap: 16px;
+  width: max-content;
+  animation: rosterScroll 46s linear infinite;
+}
+.roster-rail:hover .roster-track { animation-play-state: paused; }
+@keyframes rosterScroll { to { transform: translateX(-50%); } }
+
 .faces { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .face {
-  display: flex; align-items: center; gap: 11px;
-  padding: 7px 15px 7px 7px; border: 1px solid var(--line);
-  border-radius: var(--radius-pill); background: rgba(255,255,255,.02);
+  display: flex; align-items: center; gap: 15px; flex: 0 0 auto;
+  padding: 10px 26px 10px 10px; border: 1px solid var(--line);
+  border-radius: var(--radius-pill); background: rgba(255,255,255,.025);
   transition: border-color .25s var(--ease), background .25s var(--ease);
 }
 .face:hover { border-color: rgba(178,255,89,.35); background: rgba(178,255,89,.045); }
 .face img {
-  width: 42px; height: 42px; border-radius: 50%; object-fit: cover;
+  width: 58px; height: 58px; border-radius: 50%; object-fit: cover;
   object-position: 50% 10%;
   /* portraits are dark-on-dark — lift them so the face reads at this size */
   filter: grayscale(1) brightness(1.5) contrast(1.12);
   background: #1a1f18;
 }
 .face-txt { display: flex; flex-direction: column; line-height: 1.25; }
-.face-name { font-size: var(--t-xs); font-weight: 600; letter-spacing: -.01em; }
-.face-role { font-size: 11px; color: var(--muted); letter-spacing: .02em; }
+.face-name { font-size: 15px; font-weight: 600; letter-spacing: -.012em; }
+.face-role { font-size: 12.5px; color: var(--muted); letter-spacing: .02em; }
 
 /* ==========================================================================
    MARQUEE
@@ -1895,24 +1911,29 @@ body::after {
 }
 
 
-/* ---------- proof strip: tagline leads, marks sit beside it -------------- */
-.proofstrip-in { flex-direction: column; align-items: flex-start; gap: 26px; }
+/* ---------- proof strip: centred tagline, marks beneath, roster below -----
+   The one centred block on the page. It works here because everything under
+   it is full-width and symmetrical — three tiers, each wider than the last,
+   funnelling into the carousel. */
+.proofstrip-in { flex-direction: column; align-items: center; gap: 30px; }
 .proofstrip-lead {
-  display: flex; align-items: center; gap: clamp(28px, 4vw, 56px);
-  flex-wrap: nowrap; width: 100%;
+  display: flex; flex-direction: column; align-items: center;
+  gap: clamp(20px, 2.4vw, 30px); width: 100%; text-align: center;
 }
 .proofstrip-tag {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(26px, 2.8vw, 38px); font-weight: 700;
-  line-height: 1.1; letter-spacing: -.03em; color: var(--ink);
-  flex: 0 0 auto; white-space: nowrap;
+  font-size: clamp(28px, 3.2vw, 44px); font-weight: 700;
+  line-height: 1.08; letter-spacing: -.032em; color: var(--ink);
+  text-align: center;
 }
 .proofstrip-tag span { display: block; font-weight: 500; color: var(--muted); }
 
 .proofstrip-marks {
-  display: flex; align-items: center; gap: clamp(20px, 2.6vw, 34px);
-  padding-left: clamp(24px, 4vw, 52px);
-  border-left: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(24px, 3.2vw, 44px);
+  padding-top: clamp(18px, 2vw, 26px);
+  border-top: 1px solid var(--line);
+  min-width: min(100%, 460px);
 }
 /* the height attribute alone doesn't hold once width:auto is set — these
    marks have wildly different aspects, so size each one explicitly */
@@ -1923,7 +1944,7 @@ body::after {
 .proofstrip-marks img[alt="Olympic"] { height: 31px; }
 
 @media (max-width: 860px) {
-  .proofstrip-marks { padding-left: 0; border-left: none; }
+  .proofstrip-marks { gap: 26px; }
   .proofstrip-marks img[alt="NFL"] { height: 34px }
   .proofstrip-marks img[alt="UFC"] { height: 20px }
   .proofstrip-marks img[alt="NBA"] { height: 36px }
@@ -1996,3 +2017,5 @@ body::after {
 .hero .hero-lede strong { color: #f4f7f0; }
 .hero .eyebrow { color: #c3c8c1; }
 .hero .form-note .check { color: #b2ff59; }
+
+@media (prefers-reduced-motion: reduce) { .roster-track { animation: none; } }

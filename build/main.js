@@ -45,7 +45,9 @@
 
   var faces = document.querySelector('[data-faces]');
   if (faces) {
-    faces.innerHTML = STRIP.map(function (a) {
+    // rendered twice — the track translates -50%, so the seam never shows
+    var chips = STRIP.concat(STRIP);
+    faces.innerHTML = chips.map(function (a) {
       return '<div class="face">' +
         '<img src="assets/athletes/' + a.id + '.jpg" alt="" width="34" height="34" loading="lazy" decoding="async">' +
         '<span class="face-txt"><span class="face-name">' + a.name + '</span>' +
