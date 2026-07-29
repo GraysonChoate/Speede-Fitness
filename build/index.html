@@ -13,7 +13,7 @@
 <link rel="preload" href="assets/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/space-mono-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=b3c34883">
+<link rel="stylesheet" href="styles.css?v=32f13184">
 </head>
 <body>
 
@@ -204,6 +204,23 @@
 
 <!-- ====================== THE NUMBER ====================== -->
 <section class="sec sec--band" id="number">
+  <!-- The effort behind the number. Weighted to the right so the athlete sits
+       opposite the numeral, and masked away before it reaches the 500. -->
+  <div class="num-photo" aria-hidden="true">
+    <picture>
+      <source type="image/webp"
+              srcset="assets/img/layer/effort-760.webp 760w,
+                      assets/img/layer/effort-1100.webp 1100w,
+                      assets/img/layer/effort-1600.webp 1600w"
+              sizes="100vw">
+      <img src="assets/img/layer/effort-1100.jpg" alt="" loading="lazy" decoding="async"
+           srcset="assets/img/layer/effort-760.jpg 760w,
+                   assets/img/layer/effort-1100.jpg 1100w,
+                   assets/img/layer/effort-1600.jpg 1600w"
+           sizes="100vw">
+    </picture>
+  </div>
+
   <!-- Compression frame. Abstract atmosphere only. Geometry is anchored to the
        real column grid: the box runs from just outside the container to the
        centre of the 72px gutter, so it never reaches the copy or the rows. -->
@@ -453,7 +470,28 @@
     </div>
 
     <!-- The two remaining chapters from the film, rebuilt live. Vector-sharp
-         at any size, and every figure is Speede's own. -->
+         at any size, and every figure is Speede's own.
+
+         The bed exists so the photograph can be anchored to the cards' own
+         geometry rather than a guessed offset: it bleeds out past all four
+         edges, and the cards — which are opaque — crop it back down to
+         slivers. You get the impression of the image around them. -->
+    <div class="mods-bed">
+      <div class="mods-photo" aria-hidden="true">
+        <picture>
+          <source type="image/webp"
+                  srcset="assets/img/layer/grip-760.webp 760w,
+                          assets/img/layer/grip-1100.webp 1100w,
+                          assets/img/layer/grip-1600.webp 1600w"
+                  sizes="100vw">
+          <img src="assets/img/layer/grip-1100.jpg" alt="" loading="lazy" decoding="async"
+               srcset="assets/img/layer/grip-760.jpg 760w,
+                       assets/img/layer/grip-1100.jpg 1100w,
+                       assets/img/layer/grip-1600.jpg 1600w"
+               sizes="100vw">
+        </picture>
+      </div>
+
     <div class="mods">
 
       <!-- eccentric overload -->
@@ -501,6 +539,7 @@
       </div>
 
     </div>
+    </div><!-- /.mods-bed -->
 
     <!-- the sticking-point diagram — the "why" nobody has drawn -->
     <div class="curve-card reveal">

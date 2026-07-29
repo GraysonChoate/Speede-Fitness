@@ -264,3 +264,29 @@ Worth raising with Speede regardless: **their current site is already publishing
 Hydrow-branded hardware.** It's small and dark in the existing card, so it passes unnoticed; in
 motion at macro scale it does not. The static "Snap-in precision" card is unchanged from their own
 site, so we amplify nothing.
+
+---
+
+## Photography layered into the data sections
+
+Simon asked for the team's own stills to be woven into the two vector-heavy
+sections, with the caveat that nothing already built there gets disrupted. Both
+photographs are graded down **in the file** rather than under a CSS scrim, so
+there is only ever one thing dimming each picture. `prep-layers.py` regenerates
+them at 760/1100/1600.
+
+**The 500 — `effort`.** The bench-press still sits behind the band, masked to
+nothing across the left half so the numeral never lands on the picture. The
+athlete reads in the right half, where the comparison rows are opaque and crop
+into him. Two passes were needed: the first crop was near-square, so
+`object-fit: cover` blew him up until he read as wall rather than a person, and
+the concrete was bright enough to flatten the headline. The band-shaped crop and
+a much heavier grade fixed both. Below 940px there is no "opposite the numeral"
+left to aim at, so the side fade becomes a vertical wash.
+
+**The science — `grip`.** The B&W hand-on-bar macro is anchored to a `.mods-bed`
+wrapper around the two live cards, so it is positioned off their real geometry
+rather than a guessed offset. It bleeds past all four edges and the cards —
+which are opaque — crop it back to slivers: the bar enters from the left margin
+and disappears behind the first card. The deco, HUD, tally and curve diagram are
+all untouched.
