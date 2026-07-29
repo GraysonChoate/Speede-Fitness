@@ -13,7 +13,7 @@
 <link rel="preload" href="assets/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/space-mono-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=ca1c19bb">
+<link rel="stylesheet" href="styles.css?v=bf2bd83f">
 </head>
 <body>
 
@@ -325,21 +325,36 @@
 <div class="seam" data-seam aria-hidden="true"></div>
 <!-- ====================== THE SCIENCE ====================== -->
 <section class="sec" id="science">
-  <!-- Stills from Speede's own "WORK FOR IT." film, composited into one dark
-       field behind the whole section. The cards float on top of it; what the
-       eye catches is the margins and the gaps between them. -->
-  <div class="sci-photo" aria-hidden="true">
+  <!-- Two pictures hung on the wall, on a diagonal. The woman (a standing
+       figure) hangs high on the right; the SPEEDE-shirt athlete hangs low on
+       the left. Each bleeds off its nearest edge and feathers into the wall;
+       the data cards only ever kiss a frame's corner, never bury the subject. -->
+  <div class="sci-hang sci-hang--top" aria-hidden="true">
     <picture>
       <source type="image/webp"
-              srcset="assets/img/layer/mosaic-600.webp 600w,
-                      assets/img/layer/mosaic-900.webp 900w,
-                      assets/img/layer/mosaic-1240.webp 1240w"
-              sizes="100vw">
-      <img src="assets/img/layer/mosaic-900.jpg" alt="" loading="lazy" decoding="async"
-           srcset="assets/img/layer/mosaic-600.jpg 600w,
-                   assets/img/layer/mosaic-900.jpg 900w,
-                   assets/img/layer/mosaic-1240.jpg 1240w"
-           sizes="100vw">
+              srcset="assets/img/layer/athlete-w-380.webp 380w,
+                      assets/img/layer/athlete-w-560.webp 560w,
+                      assets/img/layer/athlete-w-760.webp 760w"
+              sizes="(max-width: 940px) 62vw, 34vw">
+      <img src="assets/img/layer/athlete-w-560.jpg" alt="" loading="lazy" decoding="async"
+           srcset="assets/img/layer/athlete-w-380.jpg 380w,
+                   assets/img/layer/athlete-w-560.jpg 560w,
+                   assets/img/layer/athlete-w-760.jpg 760w"
+           sizes="(max-width: 940px) 62vw, 34vw">
+    </picture>
+  </div>
+  <div class="sci-hang sci-hang--low" aria-hidden="true">
+    <picture>
+      <source type="image/webp"
+              srcset="assets/img/layer/athlete-m-320.webp 320w,
+                      assets/img/layer/athlete-m-460.webp 460w,
+                      assets/img/layer/athlete-m-620.webp 620w"
+              sizes="(max-width: 940px) 54vw, 24vw">
+      <img src="assets/img/layer/athlete-m-460.jpg" alt="" loading="lazy" decoding="async"
+           srcset="assets/img/layer/athlete-m-320.jpg 320w,
+                   assets/img/layer/athlete-m-460.jpg 460w,
+                   assets/img/layer/athlete-m-620.jpg 620w"
+           sizes="(max-width: 940px) 54vw, 24vw">
     </picture>
   </div>
 

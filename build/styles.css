@@ -1675,25 +1675,56 @@ body::after {
 #science { position: relative; overflow: hidden; }
 #science .wrap { position: relative; z-index: 2; }
 
-/* The film mosaic behind the whole section.
+/* Two pictures hung on the wall, on a diagonal.
 
-   Two earlier passes tried to tuck a single photograph into the gaps around
-   the cards. Both failed for the same reason: the cards span x 205–1305 of a
-   1512-wide section, so a background image only ever shows through ~200px
-   slivers, and a sliver of an extreme close-up is a smudge. Covering the full
-   section instead means the frames are large enough to read, and the parts the
-   cards hide were composited as texture rather than subject on purpose.
+   Everything before this stretched one image across the whole section, which
+   read as texture, not a picture of anyone. These are two framed photographs
+   instead: the woman high on the right, the SPEEDE-shirt athlete low on the
+   left. The eye enters at the headline, she pulls it across and down, he
+   catches it at the bottom.
 
-   It is graded dark in the file. Only the band edges are handled here. */
-.sci-photo {
-  position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
-          mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+   Each hangs off its nearest edge and feathers into the wall on its inner
+   edges, so the subject sits in open space and a card corner only kisses the
+   frame. Both are graded dark in the file; the masks here only shape where a
+   picture dissolves into the wall. */
+.sci-hang {
+  position: absolute; z-index: 0; pointer-events: none;
 }
-.sci-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: 50% 50%;
-  display: block;
+.sci-hang img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* high-right: a tall picture, top and right bleeding off, left + bottom
+   feathering back into the wall. */
+.sci-hang--top {
+  top: 24px; right: -24px; width: min(34vw, 460px); aspect-ratio: 702 / 791;
+  -webkit-mask-image:
+    linear-gradient(270deg, #000 62%, transparent 100%),
+    linear-gradient(0deg,   #000 52%, transparent 100%);
+          mask-image:
+    linear-gradient(270deg, #000 62%, transparent 100%),
+    linear-gradient(0deg,   #000 52%, transparent 100%);
+  -webkit-mask-composite: source-in; mask-composite: intersect;
+}
+.sci-hang--top img { object-position: 60% 20%; }
+
+/* low-left: a shorter picture, left and bottom bleeding off, right + top
+   feathering back. Sits beside the curve card. */
+.sci-hang--low {
+  bottom: 40px; left: -20px; width: min(24vw, 320px); aspect-ratio: 495 / 779;
+  -webkit-mask-image:
+    linear-gradient(90deg,  #000 60%, transparent 100%),
+    linear-gradient(180deg, #000 64%, transparent 100%);
+          mask-image:
+    linear-gradient(90deg,  #000 60%, transparent 100%),
+    linear-gradient(180deg, #000 64%, transparent 100%);
+  -webkit-mask-composite: source-in; mask-composite: intersect;
+}
+.sci-hang--low img { object-position: 40% 30%; }
+
+/* Narrow: the diagonal has no room, so drop the low-left picture and let the
+   woman sit quietly behind the top of the stack. */
+@media (max-width: 940px) {
+  .sci-hang--top { width: 62vw; top: -20px; }
+  .sci-hang--low { display: none; }
 }
 .sci-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
 .sci-deco > svg { position: absolute; top: 0; height: 100%; }

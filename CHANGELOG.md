@@ -284,18 +284,15 @@ the concrete was bright enough to flatten the headline. The band-shaped crop and
 a much heavier grade fixed both. Below 940px there is no "opposite the numeral"
 left to aim at, so the side fade becomes a vertical wash.
 
-**The science — `mosaic`.** Three passes here, and the first two were the same
-mistake twice. The cards span x 205–1305 of a 1512-wide section, so a background
-image only ever shows through ~200px slivers at the margins — and a sliver of an
-extreme close-up (the hand-on-bar macro) is just a smudge. Swapping in a more
-legible photograph didn't fix it either; the figure was still 80% behind a card.
-The constraint was never *which* photo, it was *how much room* it had.
-
-What shipped is a mosaic of eight stills from Speede's own "WORK FOR IT." film,
-composited into one dark field behind the whole section (`prep-mosaic.py`).
-Because it covers the full section, the frames are big enough to read. Two
-things shaped the composition: the film has **"WORK FOR IT." burned in at ~54%
-of every frame's height**, so only the top half of any frame is usable; and the
-faces were deliberately placed in the outer columns, with quiet texture — brick,
-cable, equipment — in the middle where the cards hide it anyway. The deco, HUD,
-tally and curve diagram are all untouched.
+**The science — two pictures, hung.** Three earlier passes stretched one image
+across the whole section (one big, then a mosaic of many) and every one read as
+texture, not a picture of anyone — the cards cover nearly the full width, so a
+backdrop only survives as slivers. The user reframed it: the section is a wall,
+and we hang pictures on it. So: two framed photographs on a diagonal — the
+bent-over-row woman high on the right (a standing figure, tall spot, beside the
+HUD that reads out her exact lift), the SPEEDE-shirt athlete low on the left
+(beside the curve card). Each bleeds off its nearest edge and feathers into the
+wall on its inner edges, so a card corner only kisses the frame. The eye enters
+at the headline, she pulls it across and down, he catches it at the bottom.
+Below 940px the diagonal has no room, so the man drops and the woman stays.
+Built by prep-scene.py; the deco, HUD, tally and curve diagram are untouched.
