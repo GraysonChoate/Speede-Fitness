@@ -21,7 +21,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 def grade(im):
     im = ImageEnhance.Color(im).enhance(0)          # grayscale
     im = ImageEnhance.Contrast(im).enhance(1.06)
-    im = ImageEnhance.Brightness(im).enhance(.46)   # the dark tint
+    im = ImageEnhance.Brightness(im).enhance(.40)   # the dark tint
     return im
 
 

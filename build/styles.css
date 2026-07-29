@@ -1686,22 +1686,28 @@ body::after {
 .sci-scene {
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
   display: grid; grid-template-columns: 1fr 1fr; align-content: start;
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 68%, transparent 100%);
-          mask-image: linear-gradient(180deg, #000 0%, #000 68%, transparent 100%);
 }
 .sci-scene picture { display: block; position: relative; overflow: hidden; }
 .sci-scene img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Every panel feathers on all four edges instead of butting up against its
+   neighbour with a hard line. Where two panels meet, both fade out, so the
+   seam becomes a soft dark gutter; at the outer edges each picture dissolves
+   into the section. Nothing hard-cuts. */
+.sci-scene picture {
+  -webkit-mask-image:
+    linear-gradient(90deg,  transparent 0%, #000 9%, #000 91%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 11%, #000 89%, transparent 100%);
+          mask-image:
+    linear-gradient(90deg,  transparent 0%, #000 9%, #000 91%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 11%, #000 89%, transparent 100%);
+  -webkit-mask-composite: source-in; mask-composite: intersect;
+}
 
 .sci-rect { grid-column: 1 / -1; aspect-ratio: 1350 / 554; }
 .sci-sq   { aspect-ratio: 1 / 1; }
 .sci-sq--m img { object-position: 50% 40%; }
 .sci-sq--w img { object-position: 50% 40%; }
-
-/* A hairline of the section's own background between the panels, so they read
-   as three pictures on a wall rather than one bleed. */
-.sci-rect { border-bottom: 2px solid var(--bg); }
-.sci-sq--m { border-right: 1px solid var(--bg); }
-.sci-sq--w { border-left: 1px solid var(--bg); }
 .sci-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
 .sci-deco > svg { position: absolute; top: 0; height: 100%; }
 .sci-l { left: 0;  width: max(0px, calc(50% - 590px)); }
