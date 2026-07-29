@@ -41,6 +41,10 @@ design-reference/visual-references/
 # is public — it does not belong in it.
 Slack Transcript*/
 
+# Team-supplied source media. The photos are small enough to keep; the clips
+# are 100MB of raw recordings whose encoded output lands in build/assets/.
+source-media/*.mov
+
 # macOS noise
 .DS_Store
 **/.DS_Store
