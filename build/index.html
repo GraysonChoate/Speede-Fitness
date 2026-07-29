@@ -13,7 +13,7 @@
 <link rel="preload" href="assets/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/space-mono-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=bf2bd83f">
+<link rel="stylesheet" href="styles.css?v=f726ea13">
 </head>
 <body>
 
@@ -325,36 +325,45 @@
 <div class="seam" data-seam aria-hidden="true"></div>
 <!-- ====================== THE SCIENCE ====================== -->
 <section class="sec" id="science">
-  <!-- Two pictures hung on the wall, on a diagonal. The woman (a standing
-       figure) hangs high on the right; the SPEEDE-shirt athlete hangs low on
-       the left. Each bleeds off its nearest edge and feathers into the wall;
-       the data cards only ever kiss a frame's corner, never bury the subject. -->
-  <div class="sci-hang sci-hang--top" aria-hidden="true">
-    <picture>
+  <!-- The wall: one wide rectangle (the hooded triptych) over two squares (the
+       towel athlete, the cable athlete). Grayscale, dark-tinted, behind the
+       data — the cards float on top. -->
+  <div class="sci-scene" aria-hidden="true">
+    <picture class="sci-rect">
       <source type="image/webp"
-              srcset="assets/img/layer/athlete-w-380.webp 380w,
-                      assets/img/layer/athlete-w-560.webp 560w,
-                      assets/img/layer/athlete-w-760.webp 760w"
-              sizes="(max-width: 940px) 62vw, 34vw">
-      <img src="assets/img/layer/athlete-w-560.jpg" alt="" loading="lazy" decoding="async"
-           srcset="assets/img/layer/athlete-w-380.jpg 380w,
-                   assets/img/layer/athlete-w-560.jpg 560w,
-                   assets/img/layer/athlete-w-760.jpg 760w"
-           sizes="(max-width: 940px) 62vw, 34vw">
+              srcset="assets/img/layer/rect-680.webp 680w,
+                      assets/img/layer/rect-1000.webp 1000w,
+                      assets/img/layer/rect-1350.webp 1350w"
+              sizes="100vw">
+      <img src="assets/img/layer/rect-1000.jpg" alt="" loading="lazy" decoding="async"
+           srcset="assets/img/layer/rect-680.jpg 680w,
+                   assets/img/layer/rect-1000.jpg 1000w,
+                   assets/img/layer/rect-1350.jpg 1350w"
+           sizes="100vw">
     </picture>
-  </div>
-  <div class="sci-hang sci-hang--low" aria-hidden="true">
-    <picture>
+    <picture class="sci-sq sci-sq--m">
       <source type="image/webp"
-              srcset="assets/img/layer/athlete-m-320.webp 320w,
-                      assets/img/layer/athlete-m-460.webp 460w,
-                      assets/img/layer/athlete-m-620.webp 620w"
-              sizes="(max-width: 940px) 54vw, 24vw">
-      <img src="assets/img/layer/athlete-m-460.jpg" alt="" loading="lazy" decoding="async"
-           srcset="assets/img/layer/athlete-m-320.jpg 320w,
-                   assets/img/layer/athlete-m-460.jpg 460w,
-                   assets/img/layer/athlete-m-620.jpg 620w"
-           sizes="(max-width: 940px) 54vw, 24vw">
+              srcset="assets/img/layer/sq-m-340.webp 340w,
+                      assets/img/layer/sq-m-500.webp 500w,
+                      assets/img/layer/sq-m-700.webp 700w"
+              sizes="50vw">
+      <img src="assets/img/layer/sq-m-500.jpg" alt="" loading="lazy" decoding="async"
+           srcset="assets/img/layer/sq-m-340.jpg 340w,
+                   assets/img/layer/sq-m-500.jpg 500w,
+                   assets/img/layer/sq-m-700.jpg 700w"
+           sizes="50vw">
+    </picture>
+    <picture class="sci-sq sci-sq--w">
+      <source type="image/webp"
+              srcset="assets/img/layer/sq-w-340.webp 340w,
+                      assets/img/layer/sq-w-500.webp 500w,
+                      assets/img/layer/sq-w-700.webp 700w"
+              sizes="50vw">
+      <img src="assets/img/layer/sq-w-500.jpg" alt="" loading="lazy" decoding="async"
+           srcset="assets/img/layer/sq-w-340.jpg 340w,
+                   assets/img/layer/sq-w-500.jpg 500w,
+                   assets/img/layer/sq-w-700.jpg 700w"
+           sizes="50vw">
     </picture>
   </div>
 

@@ -1675,57 +1675,33 @@ body::after {
 #science { position: relative; overflow: hidden; }
 #science .wrap { position: relative; z-index: 2; }
 
-/* Two pictures hung on the wall, on a diagonal.
+/* The wall: one wide rectangle over two squares.
 
-   Everything before this stretched one image across the whole section, which
-   read as texture, not a picture of anyone. These are two framed photographs
-   instead: the woman high on the right, the SPEEDE-shirt athlete low on the
-   left. The eye enters at the headline, she pulls it across and down, he
-   catches it at the bottom.
-
-   Each hangs off its nearest edge and feathers into the wall on its inner
-   edges, so the subject sits in open space and a card corner only kisses the
-   frame. Both are graded dark in the file; the masks here only shape where a
-   picture dissolves into the wall. */
-.sci-hang {
-  position: absolute; z-index: 0; pointer-events: none;
+   A grid laid across the top of the section — the triptych spans both columns,
+   the two squares sit under it side by side. The data cards float over the
+   whole thing (they carry z-index:2 on .wrap). Everything is graded dark in
+   the file; the mask here only dissolves the composition into the section at
+   its outer edges and along the bottom, so it never hard-cuts into the curve
+   card below. */
+.sci-scene {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  display: grid; grid-template-columns: 1fr 1fr; align-content: start;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 68%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 0%, #000 68%, transparent 100%);
 }
-.sci-hang img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sci-scene picture { display: block; position: relative; overflow: hidden; }
+.sci-scene img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* high-right: a tall picture, top and right bleeding off, left + bottom
-   feathering back into the wall. */
-.sci-hang--top {
-  top: 24px; right: -24px; width: min(34vw, 460px); aspect-ratio: 702 / 791;
-  -webkit-mask-image:
-    linear-gradient(270deg, #000 62%, transparent 100%),
-    linear-gradient(0deg,   #000 52%, transparent 100%);
-          mask-image:
-    linear-gradient(270deg, #000 62%, transparent 100%),
-    linear-gradient(0deg,   #000 52%, transparent 100%);
-  -webkit-mask-composite: source-in; mask-composite: intersect;
-}
-.sci-hang--top img { object-position: 60% 20%; }
+.sci-rect { grid-column: 1 / -1; aspect-ratio: 1350 / 554; }
+.sci-sq   { aspect-ratio: 1 / 1; }
+.sci-sq--m img { object-position: 50% 40%; }
+.sci-sq--w img { object-position: 50% 40%; }
 
-/* low-left: a shorter picture, left and bottom bleeding off, right + top
-   feathering back. Sits beside the curve card. */
-.sci-hang--low {
-  bottom: 40px; left: -20px; width: min(24vw, 320px); aspect-ratio: 495 / 779;
-  -webkit-mask-image:
-    linear-gradient(90deg,  #000 60%, transparent 100%),
-    linear-gradient(180deg, #000 64%, transparent 100%);
-          mask-image:
-    linear-gradient(90deg,  #000 60%, transparent 100%),
-    linear-gradient(180deg, #000 64%, transparent 100%);
-  -webkit-mask-composite: source-in; mask-composite: intersect;
-}
-.sci-hang--low img { object-position: 40% 30%; }
-
-/* Narrow: the diagonal has no room, so drop the low-left picture and let the
-   woman sit quietly behind the top of the stack. */
-@media (max-width: 940px) {
-  .sci-hang--top { width: 62vw; top: -20px; }
-  .sci-hang--low { display: none; }
-}
+/* A hairline of the section's own background between the panels, so they read
+   as three pictures on a wall rather than one bleed. */
+.sci-rect { border-bottom: 2px solid var(--bg); }
+.sci-sq--m { border-right: 1px solid var(--bg); }
+.sci-sq--w { border-left: 1px solid var(--bg); }
 .sci-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
 .sci-deco > svg { position: absolute; top: 0; height: 100%; }
 .sci-l { left: 0;  width: max(0px, calc(50% - 590px)); }

@@ -284,15 +284,12 @@ the concrete was bright enough to flatten the headline. The band-shaped crop and
 a much heavier grade fixed both. Below 940px there is no "opposite the numeral"
 left to aim at, so the side fade becomes a vertical wash.
 
-**The science — two pictures, hung.** Three earlier passes stretched one image
-across the whole section (one big, then a mosaic of many) and every one read as
-texture, not a picture of anyone — the cards cover nearly the full width, so a
-backdrop only survives as slivers. The user reframed it: the section is a wall,
-and we hang pictures on it. So: two framed photographs on a diagonal — the
-bent-over-row woman high on the right (a standing figure, tall spot, beside the
-HUD that reads out her exact lift), the SPEEDE-shirt athlete low on the left
-(beside the curve card). Each bleeds off its nearest edge and feathers into the
-wall on its inner edges, so a card corner only kisses the frame. The eye enters
-at the headline, she pulls it across and down, he catches it at the bottom.
-Below 940px the diagonal has no room, so the man drops and the woman stays.
-Built by prep-scene.py; the deco, HUD, tally and curve diagram are untouched.
+**The science — a rectangle over two squares.** The hung-pictures pass was
+scrapped for the artist's own composition: think of the wall as one wide
+rectangle above two squares. The rectangle is Speede's hooded triptych across
+the top; the squares are the towel athlete (left) and the cable athlete (right),
+each cropped tight to the person so the cable shot's trade-show crowd falls
+outside the frame. All three are grayscale with a dark tint, hairline gaps
+between the panels so they read as three pictures, and the composition fades to
+black before the curve diagram. The data cards float over it and stay legible.
+Built by prep-scene.py from three screenshots the client supplied.
