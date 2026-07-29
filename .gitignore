@@ -54,3 +54,8 @@ source-media/*.mov
 
 # ffmpeg scratch for prep-mosaic.py — regenerate by deleting this and re-running
 .frames/
+
+# Loose screenshot drops in the repo root. The ones the build uses live in
+# source-media/ under clean names (triptych.png, square-*.png); these are the
+# raw dated duplicates and don't belong in the repo.
+/Screenshot *.png
