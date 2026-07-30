@@ -872,6 +872,10 @@ body::after {
   .roster { grid-template-columns: 1fr; }
   .athlete-img { aspect-ratio: 4 / 3; }
   .form { flex-direction: column; }
+  /* flex: 1 1 240px sets a 240px flex-basis, and once the axis flips to
+     column that basis becomes a HEIGHT, not a width — the input renders
+     ~240px tall. Reset it so height comes from padding + line-height only. */
+  .form input { flex-basis: auto; }
   .form .btn { width: 100%; }
   .badge { display: none; }
   /* bottom must stay auto here — the 940px rule sets `top`, and setting both
@@ -1196,6 +1200,10 @@ body::after {
   .roster { grid-template-columns: 1fr; }
   .athlete-img { aspect-ratio: 4 / 3; }
   .form { flex-direction: column; }
+  /* flex: 1 1 240px sets a 240px flex-basis, and once the axis flips to
+     column that basis becomes a HEIGHT, not a width — the input renders
+     ~240px tall. Reset it so height comes from padding + line-height only. */
+  .form input { flex-basis: auto; }
   .form .btn { width: 100%; }
   .badge { display: none; }
   /* bottom must stay auto here — the 940px rule sets `top`, and setting both
@@ -1946,7 +1954,19 @@ body::after {
   transition: opacity .45s var(--ease);
   pointer-events: none; z-index: 1;
 }
-.persona-live.ready { opacity: 1; }
+/* Two of the four source clips (the athlete, the first-timer) are almost
+   static — a held grip, a look at a screen — so on hover the video was
+   technically playing but nothing visibly happened. A slow, continuous drift
+   gives every card the same "it's alive" read regardless of how much motion
+   its own footage has. */
+.persona-live.ready {
+  opacity: 1;
+  animation: personaDrift 7s ease-in-out infinite alternate;
+}
+@keyframes personaDrift {
+  from { transform: scale(1) translate(0, 0); }
+  to   { transform: scale(1.045) translate(-1%, -1%); }
+}
 .persona span { z-index: 3; }
 .persona::after { z-index: 2; }
 @media (prefers-reduced-motion: reduce) { .persona-live { display: none; } }

@@ -124,8 +124,13 @@
   /* ---------- living portraits ------------------------------------------
      Hover activates the loop. Sources attach on first hover so nothing is
      fetched until it's wanted, and the still is never replaced by a blank
-     frame — the clip only fades in once it can actually play.          */
+     frame — the clip only fades in once it can actually play.
+
+     Mobile has no hover, so on narrow viewports each card instead plays as
+     it crosses the middle of the screen — the loop runs while the card is
+     roughly centred, and stops once it scrolls past. Desktop keeps hover. */
   if (!reduce) {
+    var proofIsMobile = window.matchMedia && window.matchMedia('(max-width: 620px)').matches;
     Array.prototype.forEach.call(document.querySelectorAll('[data-live]'), function (v) {
       var card = v.closest('.athlete');
       if (!card) return;
@@ -163,6 +168,12 @@
       card.addEventListener('focusin', start);
       card.addEventListener('focusout', stop);
       card.setAttribute('tabindex', '0');
+
+      if (proofIsMobile && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) start(); else stop(); });
+        }, { threshold: 0, rootMargin: '-35% 0px -35% 0px' }).observe(card);
+      }
     });
   }
 
@@ -314,6 +325,12 @@
     if (!len) return;
     line.style.strokeDasharray = len;
     line.style.strokeDashoffset = len;
+    // observe a block-level ancestor, not the raw <path> — same fix as
+    // loopWhileVisible below; IntersectionObserver on an SVG child element is
+    // unreliable and silently never fires in some browsers, which left this
+    // line permanently hidden while anything reading its geometry (e.g. a
+    // sweep dot via getPointAtLength) worked fine regardless.
+    var host = line.ownerSVGElement ? (line.ownerSVGElement.parentNode || line) : line;
     new IntersectionObserver(function (entries, obs) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
@@ -322,7 +339,7 @@
         line.style.strokeDashoffset = 0;
         if (opts.then) setTimeout(opts.then, (opts.dur || 1500) * 0.55);
       });
-    }, { threshold: 0.35 }).observe(line);
+    }, { threshold: 0.35 }).observe(host);
   }
 
   var fill = document.querySelector('[data-curve-fill]');
